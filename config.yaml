@@ -1,0 +1,116 @@
+# ============================================================
+# 小红书自动化帖子监控与回复系统 - 配置文件
+# 请填写您的小红书 Cookie 及相关参数后再运行
+# ============================================================
+
+xhs:
+  # 从浏览器开发者工具中获取，登录小红书后 F12 -> Application -> Cookies
+  cookies: ""
+  # 多账号在 Web「账号管理」里扫码添加；选取策略 random=随机 | round_robin=轮流（更适合降风控）
+  account_pick: "random"
+  # 用户代理（留空则自动生成）
+  user_agent: ""
+  # 搜索关键词列表（系统会轮流搜索这些关键词的帖子）
+  keywords:
+    - "车抵贷"
+    - "车抵贷公司"
+  # 每次搜索抓取的页数
+  search_pages: 3
+  # 请求间隔（秒），避免触发风控
+  request_delay: 3
+  # 每批最多处理帖子数
+  batch_size: 10
+
+hot_threshold:
+  # 热度综合评分门槛（低于此分数的帖子不回复）
+  # XHS 搜索结果互动数通常在几十到几千，10 分约等于点赞≥10 或评论≥5
+  min_score: 10
+  # 各指标权重
+  weights:
+    likes: 0.4
+    comments: 0.3
+    collects: 0.2
+    shares: 0.1
+  # 点赞数基准（超过此数算满分）
+  likes_base: 500
+  comments_base: 50
+  collects_base: 200
+  shares_base: 100
+
+scheduler:
+  # true：启动 Web 服务（uvicorn）时自动开启定时任务；false：只能在网页里点「启动调度器」
+  auto_start: true
+  # 抓取任务 Cron 表达式（默认每天 9:00、14:00、20:00 各抓一次）
+  crawl_cron: "0 9,14,20 * * *"
+  # 回复任务 Cron 表达式（默认每天 10:00、15:00、21:00 各回复一次）
+  reply_cron: "0 10,15,21 * * *"
+  # 每批回复间隔（秒），模拟真人操作
+  reply_interval: 60
+  # 每批最多回复数量（防止一次回复太多触发限流）
+  max_replies_per_batch: 3
+  # 私信发送间隔（秒）
+  dm_interval: 60
+
+reply:
+  # 是否发评论
+  enable_comment: true
+  # 是否在评论中附带图片（见下方 comment_image_paths；模板自身配置了 image_paths 时不受此项限制仍会带图）
+  comment_with_images: false
+  # 全局默认配图路径（相对项目根目录），与模板 image_paths 二选一叠加策略：模板优先
+  comment_image_paths: []
+  # Web 接口评论配图载荷：image_info（与发动态类似的 images 结构）| pictures（仅 file_id 列表）
+  comment_image_payload: "image_info"
+  # 第一种载荷失败时自动尝试另一种（有助于兼容接口微调）
+  comment_image_payload_fallback: true
+  # 只发图不发字时，自动填的占位文字（部分场景接口要求非空 content）
+  comment_image_placeholder: "[图片]"
+  # 严格图文模式：配置了图片但未走图片发送时，直接报错并停止，不降级成纯文本
+  image_comment_strict: true
+  # 是否发私信
+  enable_dm: false
+  # 随机模板选取时是否避免短期内重复使用同一模板（冷却帖子数）
+  template_cooldown: 20
+  # 回复前随机等待时间范围（秒），模拟人工延迟
+  pre_reply_delay_min: 5
+  pre_reply_delay_max: 15
+
+risk_control:
+  # 仅用于降低风控，不保证不封号
+  enabled: true
+  # 每天最多成功评论条数（全局守护）
+  daily_comment_limit: 10
+  # 连续失败达到阈值后，自动停机本批次
+  max_consecutive_failures: 2
+  # 安全发送时间窗口（本地时间，左闭右开）
+  work_start_hour: 10
+  work_end_hour: 18
+  # 可选：分段工作窗口，配置后优先于 work_start_hour/work_end_hour
+  # 格式：["10-12", "15-18"]
+  work_windows:
+    - "10-12"
+    - "15-18"
+  # 安全模式（推荐开启）：自动限制单批条数并增大批间随机间隔
+  safe_mode: true
+  safe_batch_min: 1
+  safe_batch_max: 3
+  safe_interval_min: 45
+  safe_interval_max: 120
+  # 命中这些关键词立即熔断停止
+  stop_keywords:
+    - "禁言"
+    - "违反社区规范"
+    - "账号存在异常"
+    - "操作频繁"
+    - "验证码"
+
+database:
+  path: "data/xhs_bot.db"
+
+logging:
+  level: "INFO"
+  # 日志文件路径
+  file: "logs/xhs_bot.log"
+  # 单个日志文件最大大小
+  rotation: "10 MB"
+  # 日志保留天数
+  retention: "30 days"

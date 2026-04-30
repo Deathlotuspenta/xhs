@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍠 XHS Bot - 小红书自动化回复系统</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  [x-cloak] { display: none !important; }
+  .sidebar-item { @apply flex items-center gap-3 px-5 py-3.5 rounded-xl text-[15px] font-semibold transition-all cursor-pointer border border-transparent; color: #e2e8f0; }
+  .sidebar-item:hover { background-color: rgba(30, 41, 59, 0.8); border-color: rgba(51, 65, 85, 0.8); color: #ffffff; }
+  .sidebar-item.active { background-color: #6366f1; color: #ffffff; box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3); border-color: #818cf8; }
+  .card { @apply bg-white rounded-2xl shadow-sm border border-slate-200/60 p-6 transition-shadow hover:shadow-md; }
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]; }
+  .btn-primary { @apply btn bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-600/20; }
+  .btn-success { @apply btn bg-emerald-500 text-white hover:bg-emerald-600 shadow-sm shadow-emerald-500/20; }
+  .btn-danger { @apply btn bg-red-500 text-white hover:bg-red-600 shadow-sm shadow-red-500/20; }
+  .btn-ghost { @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200; }
+  .badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium tracking-wide; }
+  .input { @apply w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm transition-all focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500; }
+  .log-box { font-family: 'Consolas','Menlo',monospace; font-size: 13px; line-height: 1.6; }
+  .spinner { animation: spin 1s linear infinite; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes progressBar { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .task-running { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.5; } }
+  .guide-highlight { position: relative; z-index: 71; box-shadow: 0 0 0 3px rgba(99,102,241,0.55), 0 0 0 9999px rgba(15,23,42,0.58); border-radius: 12px; transition: box-shadow .2s; }
+  .guide-popover { position: fixed; z-index: 72; width: min(360px, calc(100vw - 24px)); }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800" x-data="xhsBot()" x-init="init()" x-cloak>
+
+<!-- Layout -->
+<div class="flex h-screen overflow-hidden">
+
+  <!-- ═══ SIDEBAR ═══════════════════════════════════ -->
+  <aside class="w-64 bg-[#0f172a] flex flex-col flex-shrink-0 shadow-xl z-10">
+    <!-- Logo -->
+    <div class="px-6 py-6 border-b border-slate-800/60">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <span class="text-xl">🍠</span>
+        </div>
+        <div>
+          <div class="text-white font-bold text-lg tracking-tight leading-tight">XHS Bot</div>
+          <div class="text-slate-300/80 text-[11px] font-medium tracking-widest">小红书自动化系统</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+      <div @click="switchPage('dashboard')" :class="{'active': page==='dashboard'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span class="tracking-wide">仪表盘</span>
+      </div>
+      <div x-ref="guideNavAccounts" @click="switchPage('accounts')" :class="{'active': page==='accounts'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <span class="tracking-wide">账号池管理</span>
+      </div>
+      <div @click="switchPage('posts')" :class="{'active': page==='posts'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span class="tracking-wide">帖子管理</span>
+        <span x-show="stats && stats.hot_pending > 0" class="ml-auto badge bg-amber-500 text-white shadow-sm shadow-amber-500/30" x-text="stats?.hot_pending"></span>
+      </div>
+      <div x-ref="guideNavTasks" @click="switchPage('tasks')" :class="{'active': page==='tasks'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span class="tracking-wide">任务控制</span>
+        <span x-show="hasCrawlRunning || hasReplyRunning" class="ml-auto w-2.5 h-2.5 rounded-full bg-emerald-400 task-running shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+      </div>
+      <div x-ref="guideNavTemplates" @click="switchPage('templates')" :class="{'active': page==='templates'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-3 3v-3z"/></svg>
+        <span class="tracking-wide">模板库</span>
+      </div>
+      <div @click="switchPage('logs')" :class="{'active': page==='logs'}" class="sidebar-item">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        <span class="tracking-wide">回复日志</span>
+      </div>
+      <div @click="switchPage('settings')" :class="{'active': page==='settings'}" class="sidebar-item mt-4">
+        <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="tracking-wide">配置</span>
+      </div>
+    </nav>
+
+    <!-- Scheduler Status -->
+    <div class="px-4 pb-6">
+      <div class="bg-slate-800/60 rounded-xl px-4 py-3 border border-slate-700/50 backdrop-blur-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-200 tracking-wide">定时调度器</span>
+          <div class="flex items-center gap-2">
+            <div :class="schedulerRunning ? 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]' : 'bg-slate-500'" class="w-2.5 h-2.5 rounded-full transition-colors duration-300"></div>
+            <span :class="schedulerRunning ? 'text-emerald-400' : 'text-slate-400'" class="text-xs font-bold tracking-wide" x-text="schedulerRunning ? '运行中' : '已停止'"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN CONTENT ════════════════════════════════ -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+
+    <!-- Top Header -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200/60 px-8 py-4 flex items-center justify-between flex-shrink-0 z-10 sticky top-0">
+      <h1 class="text-xl font-bold text-slate-800 tracking-tight" x-text="pageTitle"></h1>
+      <div class="flex items-center gap-3">
+        <button @click="startGuide(true)" class="btn-ghost text-xs px-3 py-1.5">
+          新手引导
+        </button>
+        <!-- Quick Actions -->
+        <template x-if="!hasCrawlRunning">
+          <button @click="quickCrawl()"
+            class="btn bg-blue-50 text-blue-600 hover:bg-blue-100 hover:shadow-sm border border-blue-200 text-xs px-3.5 py-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span class="font-medium">立即抓取</span>
+          </button>
+        </template>
+        <template x-if="hasCrawlRunning">
+          <button @click="cancelTask('crawl')"
+            class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 text-xs px-3.5 py-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            <span class="font-medium">停止抓取</span>
+          </button>
+        </template>
+
+        <!-- 快速回复：条数输入 -->
+        <input x-model.number="quickReplyCount" type="number" min="1" max="200" placeholder="条数"
+          class="w-16 text-xs border border-slate-200 rounded-lg px-2 py-1.5 text-center text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          title="本次回复帖子数量">
+
+        <template x-if="!hasReplyRunning">
+          <div class="flex gap-1.5">
+            <button @click="quickReply()"
+              class="btn bg-emerald-50 text-emerald-600 hover:bg-emerald-100 hover:shadow-sm border border-emerald-200 text-xs px-3.5 py-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              <span class="font-medium">立即回复</span>
+            </button>
+            <button @click="quickReplyAll()" title="忽略热度门槛，回复所有未回复的帖子"
+              class="btn bg-orange-50 text-orange-600 hover:bg-orange-100 hover:shadow-sm border border-orange-200 text-xs px-3.5 py-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span class="font-medium">全部回复</span>
+            </button>
+          </div>
+        </template>
+        <template x-if="hasReplyRunning">
+          <button @click="cancelTask('reply')"
+            class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 text-xs px-3.5 py-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            <span class="font-medium">停止回复</span>
+          </button>
+        </template>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1 overflow-y-auto p-8">
+
+      <!-- ═══ DASHBOARD ═════════════════════════════ -->
+      <div x-show="page === 'dashboard'" x-transition>
+        <!-- Stat Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="card">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">总帖子</span>
+              <div class="w-8 h-8 bg-indigo-50 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-gray-900" x-text="stats?.total ?? '—'"></div>
+            <div class="text-xs text-gray-400 mt-1">已抓取帖子</div>
+          </div>
+          <div class="card">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">热门待回复</span>
+              <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-amber-600" x-text="stats?.hot_pending ?? '—'"></div>
+            <div class="text-xs text-gray-400 mt-1">热度达标待回复</div>
+          </div>
+          <div class="card">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">已回复</span>
+              <div class="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-emerald-600" x-text="stats?.replied ?? '—'"></div>
+            <div class="text-xs text-gray-400 mt-1">成功回复帖子</div>
+          </div>
+          <div class="card">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">全部待处理</span>
+              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-blue-600" x-text="stats?.pending ?? '—'"></div>
+            <div class="text-xs text-gray-400 mt-1">队列中（含低热度）</div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+          <!-- Daily Chart -->
+          <div class="card lg:col-span-2">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-gray-700">近7天新增帖子</h3>
+              <button @click="loadStats()" class="text-xs text-indigo-500 hover:text-indigo-700">刷新</button>
+            </div>
+            <canvas id="dailyChart" height="160"></canvas>
+          </div>
+          <!-- Status Donut -->
+          <div class="card">
+            <h3 class="text-sm font-semibold text-gray-700 mb-4">状态分布</h3>
+            <canvas id="statusChart" height="160"></canvas>
+            <div class="mt-3 space-y-1" x-show="stats">
+              <div class="flex items-center justify-between text-xs">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>待回复</span>
+                <span class="font-medium text-gray-700" x-text="stats?.pending"></span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>已回复</span>
+                <span class="font-medium text-gray-700" x-text="stats?.replied"></span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-gray-300"></span>已跳过</span>
+                <span class="font-medium text-gray-700" x-text="stats?.skipped"></span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-400"></span>失败</span>
+                <span class="font-medium text-gray-700" x-text="stats?.failed"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Keyword Stats -->
+          <div class="card">
+            <h3 class="text-sm font-semibold text-gray-700 mb-3">关键词帖子数</h3>
+            <div class="space-y-2" x-show="stats?.kw_stats?.length > 0">
+              <template x-for="kw in (stats?.kw_stats ?? [])" :key="kw.keyword">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs text-gray-600 w-20 truncate" x-text="kw.keyword"></span>
+                  <div class="flex-1 bg-gray-100 rounded-full h-2">
+                    <div class="bg-indigo-400 h-2 rounded-full" :style="`width:${Math.min(100, kw.count / Math.max(...(stats?.kw_stats??[{count:1}]).map(k=>k.count)) * 100)}%`"></div>
+                  </div>
+                  <span class="text-xs font-medium text-gray-700 w-8 text-right" x-text="kw.count"></span>
+                </div>
+              </template>
+            </div>
+            <div x-show="!stats?.kw_stats?.length" class="text-xs text-gray-400 py-4 text-center">暂无数据</div>
+          </div>
+          <!-- Recent Replied -->
+          <div class="card">
+            <h3 class="text-sm font-semibold text-gray-700 mb-3">最近回复</h3>
+            <div class="space-y-2" x-show="stats?.recent_replied?.length > 0">
+              <template x-for="p in (stats?.recent_replied ?? [])" :key="p.note_id">
+                <div class="flex items-center gap-2 py-1.5 border-b border-gray-50 last:border-0">
+                  <span class="badge bg-emerald-100 text-emerald-700 text-xs" x-text="p.keyword"></span>
+                  <span class="text-xs text-gray-700 truncate flex-1" x-text="p.title || p.note_id"></span>
+                  <span class="text-xs text-amber-600 font-medium" x-text="p.score + '分'"></span>
+                </div>
+              </template>
+            </div>
+            <div x-show="!stats?.recent_replied?.length" class="text-xs text-gray-400 py-4 text-center">暂无回复记录</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ACCOUNTS ═════════════════════════════════ -->
+      <div x-show="page === 'accounts'" x-transition>
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-gray-700">小红书账号池管理</h3>
+          <button x-ref="guideStartLogin" @click="startLogin()" class="btn-primary text-xs" :disabled="loginState.status === 'pending'">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            扫码登录新账号
+          </button>
+        </div>
+
+        <!-- Login QR Modal -->
+        <div x-show="loginState.showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" x-cloak>
+          <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 text-center relative">
+            <button @click="loginState.showModal=false" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <h3 class="text-lg font-bold text-slate-800 mb-1">小红书扫码登录</h3>
+            <p class="text-xs text-slate-500 mb-4" x-text="loginState.status==='installing' ? '首次使用，正在自动安装浏览器环境...' : (loginState.qrcode && loginState.qrcode.startsWith('data:image') ? '未能提取二维码，下方为页面截图，请直接对着屏幕扫码' : '请打开小红书 App 扫描下方二维码（或直接扫桌面弹出的浏览器窗口）')"></p>
+
+            <!-- ① 安装进度 -->
+            <div x-show="loginState.status==='installing'" class="mb-4 text-left">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-indigo-500 spinner flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <span class="text-xs font-semibold text-indigo-700">正在安装 Chromium 浏览器</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mb-3">
+                <div class="h-full rounded-full" style="background:linear-gradient(90deg,#6366f1,#8b5cf6,#6366f1);background-size:200% 100%;animation:progressBar 1.6s linear infinite;width:100%"></div>
+              </div>
+              <div class="bg-slate-900 rounded-lg px-3 py-2 max-h-24 overflow-y-auto">
+                <p class="text-[11px] font-mono text-emerald-400 leading-relaxed break-all whitespace-pre-wrap" x-text="loginState.install_progress || '准备中...'"></p>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-2 text-center">首次安装约需 1~3 分钟，请勿关闭此窗口</p>
+            </div>
+
+            <!-- ② 二维码区域（非安装状态时显示） -->
+            <div x-show="loginState.status!=='installing'" class="w-48 h-48 mx-auto bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center mb-5 overflow-hidden relative">
+              <div x-show="loginState.status==='init'" class="text-slate-400 flex flex-col items-center gap-2">
+                <svg class="w-6 h-6 spinner" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <span class="text-xs">正在拉取二维码...</span>
+              </div>
+              <img x-show="loginState.qrcode" :src="loginState.qrcode" class="w-full h-full object-cover">
+              <div x-show="loginState.status==='success'" class="absolute inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-emerald-600">
+                <svg class="w-12 h-12 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="font-bold">登录成功</span>
+              </div>
+              <div x-show="loginState.status==='failed'" class="absolute inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center text-red-500 px-4">
+                <svg class="w-10 h-10 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="font-bold mb-1">登录失败</span>
+                <span class="text-[10px] opacity-80" x-text="loginState.error"></span>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 mb-3" x-show="loginState.status==='pending'">二维码已获取，等待扫码...</p>
+            <button x-show="loginState.status==='success' || loginState.status==='failed'" @click="loginState.showModal=false; if(loginState.status==='success') loadAccounts();" class="btn-primary w-full justify-center">关闭</button>
+          </div>
+        </div>
+
+        <!-- Accounts Table -->
+        <div class="card p-0 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 border-b border-slate-200">
+              <tr>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-16">ID</th>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase">账号</th>
+                <th class="text-center px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-24">状态</th>
+                <th class="text-right px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-24">使用次数</th>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-32">最近使用</th>
+                <th class="text-center px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-32">操作</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <template x-for="acc in accounts" :key="acc.id">
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="px-5 py-3.5 text-xs text-slate-500 font-mono" x-text="'#'+acc.id"></td>
+                  <td class="px-5 py-3.5 font-medium text-slate-800" x-text="acc.phone"></td>
+                  <td class="px-5 py-3.5 text-center">
+                    <span :class="acc.status==='active' ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-red-50 text-red-600 border-red-200'" class="badge border" x-text="acc.status==='active' ? '有效' : '无效'"></span>
+                  </td>
+                  <td class="px-5 py-3.5 text-right text-slate-600 font-mono" x-text="acc.use_count"></td>
+                  <td class="px-5 py-3.5 text-xs text-slate-400" x-text="acc.last_used_at"></td>
+                  <td class="px-5 py-3.5 text-center flex items-center justify-center gap-2">
+                    <button @click="toggleAccount(acc.id)" :class="acc.status==='active' ? 'text-amber-500 hover:text-amber-600' : 'text-emerald-500 hover:text-emerald-600'" class="text-xs font-medium" x-text="acc.status==='active' ? '禁用' : '启用'"></button>
+                    <span class="text-slate-200">|</span>
+                    <button @click="deleteAccount(acc.id)" class="text-red-500 hover:text-red-600 text-xs font-medium">删除</button>
+                  </td>
+                </tr>
+              </template>
+              <tr x-show="accounts.length === 0">
+                <td colspan="6" class="text-center py-16 text-slate-400 text-sm">
+                  <svg class="w-12 h-12 mx-auto text-slate-200 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
+                  暂无账号，请点击上方「扫码登录」添加
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ POSTS ══════════════════════════════════ -->
+      <div x-show="page === 'posts'" x-transition>
+        <!-- Filters -->
+        <div class="card mb-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <select x-model="postsFilter.status" @change="loadPosts(1)" class="input w-36">
+              <option value="">全部状态</option>
+              <option value="pending">待回复</option>
+              <option value="replied_comment">已评论</option>
+              <option value="replied_dm">已私信</option>
+              <option value="replied_both">已全部回复</option>
+              <option value="skipped">已跳过</option>
+              <option value="failed">失败</option>
+            </select>
+            <select x-model="postsFilter.keyword" @change="loadPosts(1)" class="input w-32">
+              <option value="">全部关键词</option>
+              <template x-for="kw in keywords" :key="kw"><option :value="kw" x-text="kw"></option></template>
+            </select>
+            <select x-model="postsFilter.min_score" @change="loadPosts(1)" class="input w-36">
+              <option value="0">不限热度</option>
+              <option value="30">≥30分</option>
+              <option value="50">≥50分（热门）</option>
+              <option value="70">≥70分（爆款）</option>
+            </select>
+            <select x-model="postsFilter.sort" @change="loadPosts(1)" class="input w-32">
+              <option value="hot_score">热度排序</option>
+              <option value="likes">点赞排序</option>
+              <option value="comments">评论排序</option>
+              <option value="crawled_at">抓取时间</option>
+            </select>
+            <button @click="loadPosts(1)" class="btn-ghost text-xs">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              刷新
+            </button>
+            <span class="text-xs text-gray-400 ml-auto">共 <span class="font-medium text-gray-700" x-text="postsTotal"></span> 条</span>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card p-0 overflow-hidden">
+          <!-- 批量操作工具栏 -->
+          <div x-show="selectedPosts.length > 0" x-transition
+            class="flex items-center gap-3 px-5 py-3 bg-indigo-50 border-b border-indigo-100">
+            <span class="text-sm text-indigo-700 font-medium">已选 <span x-text="selectedPosts.length"></span> 条</span>
+            <button @click="batchDeletePosts()"
+              class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-red-500 text-white hover:bg-red-600 transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              批量删除
+            </button>
+            <button @click="selectedPosts = []" class="text-xs text-indigo-500 hover:text-indigo-700">取消选择</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-50 border-b border-slate-200">
+                <tr>
+                  <th class="px-4 py-3.5 w-10">
+                    <input type="checkbox"
+                      :checked="posts.length > 0 && selectedPosts.length === posts.length"
+                      :indeterminate="selectedPosts.length > 0 && selectedPosts.length < posts.length"
+                      @change="toggleSelectAll($event.target.checked)"
+                      class="rounded border-slate-300 text-indigo-600 cursor-pointer">
+                  </th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider">标题</th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-20">关键词</th>
+                  <th class="text-right px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-16">热度</th>
+                  <th class="text-right px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-14">👍</th>
+                  <th class="text-right px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-14">💬</th>
+                  <th class="text-center px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-32">状态</th>
+                  <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-24">抓取时间</th>
+                  <th class="text-center px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-44">操作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                <template x-for="p in posts" :key="p.id">
+                  <tr class="hover:bg-slate-50/80 transition-colors group" :class="selectedPosts.includes(p.note_id) ? 'bg-indigo-50/60' : ''">
+                    <td class="px-4 py-3.5">
+                      <input type="checkbox" :value="p.note_id" x-model="selectedPosts"
+                        class="rounded border-slate-300 text-indigo-600 cursor-pointer">
+                    </td>
+                    <td class="px-5 py-3.5">
+                      <a :href="p.url" target="_blank" class="text-slate-800 hover:text-indigo-600 font-medium line-clamp-1 max-w-xs block" x-text="p.title || '（无标题，重新抓取可修复）'"></a>
+                      <div class="text-xs text-slate-400 mt-1" x-text="p.author_name || p.note_id.slice(0,16)"></div>
+                    </td>
+                    <td class="px-5 py-3.5"><span class="badge bg-indigo-50 text-indigo-600 border border-indigo-100" x-text="p.keyword"></span></td>
+                    <td class="px-5 py-3.5 text-right">
+                      <span :class="p.hot_score>=70?'text-red-600 font-bold':p.hot_score>=50?'text-amber-600 font-semibold':'text-slate-500'" x-text="p.hot_score"></span>
+                    </td>
+                    <td class="px-5 py-3.5 text-right text-slate-600" x-text="p.likes.toLocaleString()"></td>
+                    <td class="px-5 py-3.5 text-right text-slate-600" x-text="p.comments.toLocaleString()"></td>
+                    <td class="px-5 py-3.5 text-center"><span :class="statusBadge(p.reply_status)" class="badge border" x-text="statusLabel(p.reply_status)"></span></td>
+                    <td class="px-5 py-3.5 text-xs text-slate-400" x-text="p.crawled_at"></td>
+                    <td class="px-5 py-3.5 text-center">
+                      <div class="flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a :href="p.url" target="_blank" class="text-xs text-indigo-500 hover:text-indigo-700 font-medium">查看</a>
+                        <span class="text-slate-200">|</span>
+                        <button @click="deletePost(p.note_id)" class="text-xs text-red-400 hover:text-red-600 font-medium">删除</button>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+                <tr x-show="posts.length === 0">
+                  <td colspan="9" class="text-center py-16 text-slate-400 text-sm">
+                    <svg class="w-12 h-12 mx-auto text-slate-200 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    暂无数据，请先执行抓取任务
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="px-5 py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/50" x-show="postsPages > 1">
+            <span class="text-xs text-slate-500 font-medium">第 <span x-text="postsPage"></span> / <span x-text="postsPages"></span> 页</span>
+            <div class="flex gap-2">
+              <button @click="loadPosts(postsPage-1)" :disabled="postsPage<=1" class="px-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-40 transition-colors font-medium text-slate-600 shadow-sm">上一页</button>
+              <button @click="loadPosts(postsPage+1)" :disabled="postsPage>=postsPages" class="px-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-40 transition-colors font-medium text-slate-600 shadow-sm">下一页</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TASKS ═══════════════════════════════════ -->
+      <div x-show="page === 'tasks'" x-transition>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
+
+          <!-- Crawl Card -->
+          <div class="card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-gray-800">帖子抓取</h3>
+                <p class="text-xs text-gray-400">从小红书搜索并收集帖子</p>
+              </div>
+              <div class="ml-auto">
+                <div x-show="hasCrawlRunning" class="flex items-center gap-1.5 text-xs text-blue-600">
+                  <svg class="w-3.5 h-3.5 spinner" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  运行中
+                </div>
+              </div>
+            </div>
+            <div class="space-y-3 mb-4">
+              <div>
+                <label class="text-xs text-gray-500 block mb-1">指定关键词（留空抓取所有配置关键词）</label>
+                <input x-model="crawlParams.keyword" placeholder="例：护肤" class="input">
+              </div>
+              <div>
+                <label class="text-xs text-gray-500 block mb-1">抓取页数（留空使用默认配置）</label>
+                <input x-model.number="crawlParams.pages" type="number" min="1" max="20" placeholder="默认 3 页" class="input">
+              </div>
+            </div>
+            <button x-ref="guideStartCrawl" @click="startCrawl()" :disabled="hasCrawlRunning" class="btn-primary w-full justify-center">
+              <svg class="w-4 h-4" :class="hasCrawlRunning ? 'spinner' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span x-text="hasCrawlRunning ? '抓取中，请稍候…' : '开始抓取'"></span>
+            </button>
+          </div>
+
+          <!-- Reply Card -->
+          <div class="card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-gray-800">自动回复</h3>
+                <p class="text-xs text-gray-400">向热门帖子发送模板回复</p>
+              </div>
+              <div class="ml-auto">
+                <div x-show="hasReplyRunning" class="flex items-center gap-1.5 text-xs text-emerald-600">
+                  <svg class="w-3.5 h-3.5 spinner" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  运行中
+                </div>
+              </div>
+            </div>
+            <div class="space-y-3 mb-4">
+              <div>
+                <label class="text-xs text-gray-500 block mb-1">最多回复条数（留空使用配置默认值）</label>
+                <input x-model.number="replyParams.count" type="number" min="1" max="50" placeholder="默认 5 条" class="input">
+              </div>
+              <div>
+                <label class="text-xs text-gray-500 block mb-1">只回复指定关键词（留空不限）</label>
+                <input x-model="replyParams.keyword" placeholder="例：护肤" class="input">
+              </div>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" x-model="replyParams.dry_run" class="rounded text-indigo-600">
+                <span class="text-xs text-gray-600">DRY-RUN（测试模式，不实际发送）</span>
+              </label>
+            </div>
+            <button x-ref="guideStartReply" @click="startReply()" :disabled="hasReplyRunning" class="btn-success w-full justify-center">
+              <svg class="w-4 h-4" :class="hasReplyRunning ? 'spinner' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span x-text="hasReplyRunning ? '回复中，请稍候…' : '开始回复（热门帖子）'"></span>
+            </button>
+            <button @click="startReplyAll()" :disabled="hasReplyRunning" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-orange-300 bg-orange-50 text-orange-700 hover:bg-orange-100 font-medium text-sm transition-colors mt-2">
+              <svg class="w-4 h-4" :class="hasReplyRunning ? 'spinner' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span x-text="hasReplyRunning ? '回复中，请稍候…' : '全部回复（忽略热度门槛）'"></span>
+            </button>
+          </div>
+
+          <div class="card">
+            <h3 class="text-sm font-semibold text-gray-800 mb-2">运行模式</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              当前版本已移除真机/Appium 控制，仅保留 Web 自动回复链路，适合直接打包为桌面应用。
+            </p>
+          </div>
+        </div>
+
+        <!-- Task Log Output -->
+        <div class="card mb-5" x-show="crawlLog || replyLog || hasCrawlRunning || hasReplyRunning">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-semibold text-gray-700">任务输出日志</h3>
+            <div class="flex gap-2 items-center">
+              <button @click="activeLog='crawl'" :class="activeLog==='crawl'?'bg-blue-100 text-blue-700':'bg-gray-100 text-gray-600'" class="px-3 py-1 text-xs rounded-md font-medium">
+                抓取
+                <span x-show="hasCrawlRunning" class="ml-1 w-1.5 h-1.5 rounded-full bg-blue-500 task-running inline-block"></span>
+              </button>
+              <button @click="activeLog='reply'" :class="activeLog==='reply'?'bg-emerald-100 text-emerald-700':'bg-gray-100 text-gray-600'" class="px-3 py-1 text-xs rounded-md font-medium">
+                回复
+                <span x-show="hasReplyRunning" class="ml-1 w-1.5 h-1.5 rounded-full bg-emerald-500 task-running inline-block"></span>
+              </button>
+              <!-- 停止当前日志对应任务 -->
+              <button x-show="(activeLog==='crawl' && hasCrawlRunning) || (activeLog==='reply' && hasReplyRunning)"
+                @click="cancelTask(activeLog)"
+                class="px-3 py-1 text-xs rounded-md font-medium bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                停止
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-950 rounded-lg p-3 h-52 overflow-y-auto" id="logContainer">
+            <pre class="log-box text-gray-300 whitespace-pre-wrap" x-text="activeLog==='crawl' ? crawlLog : replyLog"></pre>
+            <div x-show="(activeLog==='crawl' && hasCrawlRunning) || (activeLog==='reply' && hasReplyRunning)" class="text-green-400 log-box">█ 运行中...</div>
+          </div>
+        </div>
+
+        <!-- Scheduler Control -->
+        <div class="card">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div :class="schedulerRunning ? 'bg-green-100' : 'bg-gray-100'" class="w-10 h-10 rounded-xl flex items-center justify-center">
+                <svg :class="schedulerRunning ? 'text-green-600' : 'text-gray-400'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-gray-800">定时调度器</h3>
+                <p class="text-xs" :class="schedulerRunning ? 'text-green-500' : 'text-gray-400'" x-text="schedulerRunning ? '运行中 — 自动执行抓取和回复' : '已停止 — 需手动触发任务'"></p>
+              </div>
+            </div>
+            <button @click="toggleScheduler()"
+              :class="schedulerRunning ? 'btn-danger' : 'btn-success'"
+              x-text="schedulerRunning ? '停止调度器' : '启动调度器'">
+            </button>
+          </div>
+          <!-- Jobs Table -->
+          <div x-show="schedulerJobs.length > 0">
+            <table class="w-full text-xs">
+              <thead><tr class="border-b border-gray-100">
+                <th class="text-left py-2 text-gray-500 font-medium">任务</th>
+                <th class="text-left py-2 text-gray-500 font-medium">下次执行时间</th>
+              </tr></thead>
+              <tbody>
+                <template x-for="job in schedulerJobs" :key="job.id">
+                  <tr class="border-b border-gray-50">
+                    <td class="py-2 text-gray-700" x-text="job.name"></td>
+                    <td class="py-2 text-gray-500" x-text="job.next_run"></td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+          <div x-show="schedulerJobs.length === 0" class="text-xs text-gray-400 text-center py-4">
+            调度器未运行，启动后将显示任务列表
+          </div>
+          <div class="mt-3 flex flex-wrap gap-4 text-xs text-gray-400">
+            <span>抓取 Cron: <code class="bg-gray-100 px-1 rounded" x-text="schedulerCrawlCron"></code></span>
+            <span>回复 Cron: <code class="bg-gray-100 px-1 rounded" x-text="schedulerReplyCron"></code></span>
+          </div>
+          <p x-show="schedulerAutoStart" class="text-xs text-amber-700/80 mt-3 leading-relaxed">
+            已开启 <code class="bg-amber-100/80 px-1 rounded">scheduler.auto_start</code>：启动 <code class="bg-amber-100/80 px-0.5 rounded">uvicorn</code> 时会自动运行上方定时；若一直不执行，请确认服务未用多进程（<code class="bg-amber-100/80 px-0.5 rounded">--workers 1</code>）且时区为东八区。
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ TEMPLATES ══════════════════════════════ -->
+      <div x-show="page === 'templates'" x-transition>
+        <!-- Tabs + Add Button -->
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex gap-1 bg-gray-100 p-1 rounded-lg">
+            <button @click="templateTab='comment'; loadTemplates()" :class="templateTab==='comment'?'bg-white shadow text-gray-800':'text-gray-500'" class="px-4 py-1.5 text-sm rounded-md font-medium transition-all">评论模板</button>
+            <button @click="templateTab='dm'; loadTemplates()" :class="templateTab==='dm'?'bg-white shadow text-gray-800':'text-gray-500'" class="px-4 py-1.5 text-sm rounded-md font-medium transition-all">私信模板</button>
+          </div>
+          <button @click="openTemplateModal(null)" class="btn-primary text-xs">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            新增模板
+          </button>
+        </div>
+
+        <!-- Template Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+          <template x-for="tpl in templates" :key="tpl.id">
+            <div :class="tpl.enabled ? 'border-gray-100' : 'border-gray-100 opacity-60'" class="card border flex flex-col gap-2">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="text-sm font-medium text-gray-800" x-text="tpl.name"></div>
+                  <div class="text-xs text-gray-400 mt-0.5">
+                    使用 <span class="font-medium text-gray-600" x-text="tpl.use_count"></span> 次
+                    <span x-show="tpl.last_used_at"> · 最近 <span x-text="tpl.last_used_at"></span></span>
+                  </div>
+                </div>
+                <span :class="tpl.enabled ? 'bg-green-50 text-green-600' : 'bg-gray-100 text-gray-400'" class="badge text-xs" x-text="tpl.enabled ? '启用' : '禁用'"></span>
+              </div>
+              <div class="bg-gray-50 rounded-lg p-2.5 text-xs text-gray-600 leading-relaxed line-clamp-3" x-text="tpl.content"></div>
+              <div x-show="tpl.image_paths" class="text-[10px] text-amber-700 bg-amber-50 rounded px-2 py-1 truncate" title="配图路径 JSON">
+                配图 <span x-text="tpl.image_paths"></span>
+              </div>
+              <div x-show="tpl.keywords" class="flex flex-wrap gap-1">
+                <template x-for="kw in (tpl.keywords||'').split(',').filter(k=>k.trim())" :key="kw">
+                  <span class="badge bg-indigo-50 text-indigo-600 text-xs" x-text="kw.trim()"></span>
+                </template>
+              </div>
+              <div class="flex gap-2 pt-1">
+                <button @click="openTemplateModal(tpl)" class="btn-ghost text-xs flex-1 justify-center py-1.5">编辑</button>
+                <button @click="toggleTpl(tpl)" :class="tpl.enabled ? 'btn-ghost' : 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100 btn'" class="text-xs flex-1 justify-center py-1.5" x-text="tpl.enabled ? '禁用' : '启用'"></button>
+                <button @click="deleteTpl(tpl.id)" class="btn-ghost text-red-400 hover:text-red-600 text-xs px-2.5 py-1.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </div>
+            </div>
+          </template>
+          <div x-show="templates.length === 0" class="col-span-full text-center py-12 text-gray-400 text-sm">
+            暂无模板，点击「新增模板」添加
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ LOGS ════════════════════════════════════ -->
+      <div x-show="page === 'logs'" x-transition>
+        <!-- Filters -->
+        <div class="card mb-4">
+          <div class="flex flex-wrap items-center gap-3">
+            <select x-model="logsFilter.type" @change="loadLogs(1)" class="input w-32">
+              <option value="">全部类型</option>
+              <option value="comment">评论</option>
+              <option value="dm">私信</option>
+            </select>
+            <select x-model="logsFilter.success" @change="loadLogs(1)" class="input w-28">
+              <option value="">全部结果</option>
+              <option value="true">成功</option>
+              <option value="false">失败</option>
+            </select>
+            <button @click="loadLogs(1)" class="btn-ghost text-xs">刷新</button>
+            <span class="text-xs text-gray-400 ml-auto">共 <span class="font-medium text-gray-700" x-text="logsTotal"></span> 条</span>
+          </div>
+        </div>
+        <div class="card p-0 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 border-b border-slate-200">
+              <tr>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-36">时间</th>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-24">类型</th>
+                <th class="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider">内容</th>
+                <th class="text-center px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wider w-20">结果</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <template x-for="log in logs" :key="log.id">
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="px-5 py-3.5 text-xs text-slate-400 font-medium" x-text="log.replied_at"></td>
+                  <td class="px-5 py-3.5">
+                    <span :class="log.reply_type==='comment'?'bg-blue-50 text-blue-600 border border-blue-100':'bg-purple-50 text-purple-600 border border-purple-100'" class="badge" x-text="log.reply_type==='comment'?'评论':'私信'"></span>
+                  </td>
+                  <td class="px-5 py-3.5 text-xs text-slate-600 max-w-xs truncate">
+                    <div x-text="log.content" class="truncate"></div>
+                    <div x-show="log.error_msg" class="text-red-500 mt-1 font-medium bg-red-50 px-2 py-1 rounded inline-block" x-text="log.error_msg"></div>
+                  </td>
+                  <td class="px-5 py-3.5 text-center">
+                    <div x-show="log.success" class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div x-show="!log.success" class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </div>
+                  </td>
+                </tr>
+              </template>
+              <tr x-show="logs.length === 0">
+                <td colspan="4" class="text-center py-16 text-slate-400 text-sm">
+                  <svg class="w-12 h-12 mx-auto text-slate-200 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  暂无回复日志
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="px-5 py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/50" x-show="logsPages > 1">
+            <span class="text-xs text-slate-500 font-medium">第 <span x-text="logsPage"></span> / <span x-text="logsPages"></span> 页</span>
+            <div class="flex gap-2">
+              <button @click="loadLogs(logsPage-1)" :disabled="logsPage<=1" class="px-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-40 transition-colors font-medium text-slate-600 shadow-sm">上一页</button>
+              <button @click="loadLogs(logsPage+1)" :disabled="logsPage>=logsPages" class="px-3 py-1.5 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-40 transition-colors font-medium text-slate-600 shadow-sm">下一页</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SETTINGS ═══════════════════════════════ -->
+      <div x-show="page === 'settings'" x-transition>
+        <div class="card max-w-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-sm font-semibold text-gray-700">配置文件编辑</h3>
+            <button @click="saveConfig()" class="btn-primary text-xs">保存配置</button>
+          </div>
+          <p class="text-xs text-amber-600 bg-amber-50 rounded-lg px-3 py-2 mb-3">⚠️ 修改配置后需要重启 Web 服务才能完全生效（调度器 Cron 等）</p>
+          <textarea x-model="configContent" class="w-full h-96 font-mono text-xs border border-gray-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-indigo-300 bg-gray-50 resize-none"></textarea>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ═══ TEMPLATE MODAL ═══════════════════════════════ -->
+<div x-show="showTemplateModal" class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display:none">
+  <div class="absolute inset-0 bg-black/50" @click="showTemplateModal=false"></div>
+  <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+      <h3 class="font-semibold text-gray-800" x-text="editingTpl ? '编辑模板' : '新增模板'"></h3>
+      <button @click="showTemplateModal=false" class="text-gray-400 hover:text-gray-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">模板名称 *</label>
+        <input x-model="tplForm.name" class="input" placeholder="例：护肤共鸣回复">
+      </div>
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">类型 *</label>
+        <select x-model="tplForm.template_type" class="input">
+          <option value="comment">评论</option>
+          <option value="dm">私信</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">模板内容 *</label>
+        <textarea x-model="tplForm.content" rows="5" class="input resize-none" placeholder="输入回复内容，支持换行…"></textarea>
+        <div class="mt-2 flex flex-wrap items-center gap-1.5 text-[10px]">
+          <span class="text-gray-400 mr-1">快捷插入：</span>
+          <button type="button" @click="insertTplToken('{{author}}')" class="px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">作者名</button>
+          <button type="button" @click="insertTplToken('{{keyword}}')" class="px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">关键词</button>
+          <button type="button" @click="insertTplToken('{你好|哈喽|嗨}')" class="px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">开场随机</button>
+          <button type="button" @click="insertTplToken('{很有用|太实用了|学到了}')" class="px-2 py-1 rounded border border-gray-200 bg-gray-50 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">夸赞随机</button>
+          <button type="button" @click="useTplDemo()" class="px-2 py-1 rounded border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100">一键示例</button>
+        </div>
+        <div class="text-right text-xs text-gray-400 mt-1" x-text="tplForm.content.length + ' 字'"></div>
+      </div>
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">适用关键词（逗号分隔，可留空表示通用）</label>
+        <input x-model="tplForm.keywords" class="input" placeholder="例：护肤,面膜,精华">
+      </div>
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">标签（逗号分隔）</label>
+        <input x-model="tplForm.tags" class="input" placeholder="例：护肤,通用,互动">
+      </div>
+      <div x-show="tplForm.template_type==='comment'" class="space-y-2">
+        <label class="block text-xs text-gray-500 mb-1">评论配图</label>
+        <div class="flex flex-wrap gap-2 items-center">
+          <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple class="hidden" x-ref="tplImgInput" @change="onTplImagesUpload($event)">
+          <button type="button" @click="$refs.tplImgInput.click()" class="btn-ghost text-xs px-3 py-1.5 border border-dashed border-gray-300 rounded-lg hover:border-indigo-300 hover:bg-indigo-50/50">
+            ＋ 上传图片
+          </button>
+          <span class="text-[10px] text-gray-400">jpg / png / webp / gif，单张≤5MB，单次最多9张</span>
+        </div>
+        <div class="flex flex-wrap gap-2" x-show="tplImageList().length > 0">
+          <template x-for="(p, idx) in tplImageList()" :key="p + '-' + idx">
+            <div class="relative group w-16 h-16 rounded-lg overflow-hidden border border-gray-200 shrink-0 bg-gray-100">
+              <img :src="'/' + p" class="w-full h-full object-cover" alt="" @error="$el.classList.add('opacity-30')">
+              <button type="button" @click.stop="removeTplImage(idx)" title="移除此图" class="absolute top-0.5 right-0.5 w-5 h-5 rounded bg-red-500/90 text-white text-xs leading-5 text-center shadow opacity-0 group-hover:opacity-100 hover:bg-red-600">×</button>
+            </div>
+          </template>
+        </div>
+        <textarea x-model="tplForm.image_paths" rows="2" class="input resize-none font-mono text-xs" placeholder='上传后自动填入 JSON；也可手工粘贴路径'></textarea>
+        <p class="text-[10px] text-gray-400 mt-1">模板配图优先于 config.yaml；全局开关仍为 reply.comment_with_images。</p>
+      </div>
+    </div>
+    <div class="px-5 pb-5 flex gap-3 justify-end">
+      <button @click="showTemplateModal=false" class="btn-ghost">取消</button>
+      <button @click="saveTpl()" class="btn-primary" :disabled="!tplForm.name || (!(tplForm.content||'').trim() && !(tplForm.image_paths||'').trim())">
+        <span x-text="editingTpl ? '保存修改' : '创建模板'"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BEGINNER GUIDE ═══════════════════════════════ -->
+<div x-show="guide.active" x-cloak>
+  <div class="fixed inset-0 z-[70] bg-slate-900/55"></div>
+  <div class="guide-popover" :style="`left:${guide.popoverLeft}px; top:${guide.popoverTop}px;`">
+    <div class="rounded-2xl border border-indigo-100 bg-white shadow-2xl p-4">
+      <div class="text-xs font-semibold text-indigo-600 mb-1" x-text="`步骤 ${guide.stepIndex + 1} / ${guide.steps.length}`"></div>
+      <h3 class="text-sm font-bold text-slate-800 mb-1" x-text="guide.currentStep?.title"></h3>
+      <p class="text-xs text-slate-600 leading-relaxed" x-text="guide.currentStep?.desc"></p>
+      <div class="mt-4 flex items-center justify-between">
+        <button @click="skipGuide()" class="text-xs text-slate-400 hover:text-slate-600">跳过</button>
+        <div class="flex gap-2">
+          <button @click="prevGuideStep()" class="btn-ghost text-xs px-3 py-1.5" :disabled="guide.stepIndex === 0">上一步</button>
+          <button @click="nextGuideStep()" class="btn-primary text-xs px-3 py-1.5" x-text="guide.stepIndex === guide.steps.length - 1 ? '完成' : '下一步'"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOAST ════════════════════════════════════════ -->
+<div x-show="toast" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed bottom-5 right-5 z-50 max-w-sm" style="display:none">
+  <div :class="toast?.type==='error'?'bg-red-50 border-red-200 text-red-700':'bg-emerald-50 border-emerald-200 text-emerald-700'" class="flex items-center gap-3 px-4 py-3 rounded-xl border shadow-lg text-sm font-medium">
+    <span x-show="toast?.type!=='error'" class="text-lg">✓</span>
+    <span x-show="toast?.type==='error'" class="text-lg">✗</span>
+    <span x-text="toast?.msg"></span>
+  </div>
+</div>
+
+<!-- ═══ GUIDE QUICK ENTRY ════════════════════════════ -->
+<button
+  @click="startGuide(true)"
+  class="fixed bottom-5 left-5 z-50 px-4 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 hover:bg-indigo-700 transition-all"
+  title="查看新手引导"
+>
+  查看引导
+</button>
+
+<!-- ═══ ALPINE.JS APP ════════════════════════════════ -->
+<script>
+function xhsBot() {
+  return {
+    page: 'dashboard',
+    pageTitle: '仪表盘',
+
+    // ── Accounts ──
+    accounts: [],
+    loginState: { showModal: false, session_id: null, status: 'init', qrcode: '', error: '', install_progress: '' },
+    loginPollTimer: null,
+
+    // ── Dashboard ──
+    stats: null,
+    dailyChartObj: null,
+    statusChartObj: null,
+
+    // ── Posts ──
+    posts: [], postsTotal: 0, postsPage: 1, postsPages: 1,
+    postsFilter: { status: '', keyword: '', min_score: 0, sort: 'hot_score' },
+    keywords: [],
+
+    // ── Templates ──
+    templates: [], templateTab: 'comment',
+    showTemplateModal: false, editingTpl: null,
+    tplForm: { name: '', content: '', template_type: 'comment', tags: '', keywords: '', image_paths: '' },
+
+    // ── Tasks ──
+    crawlParams: { keyword: '', pages: null },
+    replyParams: { count: null, keyword: '', dry_run: false },
+    quickReplyCount: null,
+    hasCrawlRunning: false, hasReplyRunning: false,
+    crawlLog: '', replyLog: '', activeLog: 'crawl',
+    crawlPollTimer: null, replyPollTimer: null,
+
+    // ── Posts selection ──
+    selectedPosts: [],
+
+    // ── Scheduler ──
+    schedulerRunning: false, schedulerJobs: [],
+    schedulerCrawlCron: '', schedulerReplyCron: '', schedulerAutoStart: false,
+
+    // ── Logs ──
+    logs: [], logsTotal: 0, logsPage: 1, logsPages: 1,
+    logsFilter: { type: '', success: '' },
+
+    // ── Settings ──
+    configContent: '',
+
+    // ── Toast ──
+    toast: null, toastTimer: null,
+
+    // ── Beginner guide ──
+    guide: {
+      active: false,
+      stepIndex: 0,
+      currentStep: null,
+      highlightEl: null,
+      popoverTop: 20,
+      popoverLeft: 20,
+      storageKey: 'xhs_bot_beginner_guide_done_v1',
+      steps: [
+        { page: 'accounts', ref: 'guideNavAccounts', title: '先准备账号', desc: '先去账号池管理，扫码登录至少一个小红书账号，这是后续抓取和回复的前提。' },
+        { page: 'accounts', ref: 'guideStartLogin', title: '点击扫码登录', desc: '点击这个按钮会拉起登录流程，按弹窗提示完成扫码即可。' },
+        { page: 'tasks', ref: 'guideNavTasks', title: '进入任务控制', desc: '账号准备好后到任务控制页，执行抓取与自动回复。' },
+        { page: 'tasks', ref: 'guideStartCrawl', title: '先抓取帖子', desc: '建议先运行抓取任务，收集帖子数据并更新热度。' },
+        { page: 'tasks', ref: 'guideStartReply', title: '再启动自动回复', desc: '确认模板可用后，启动自动回复任务；你也可以在顶部快速操作里一键执行。' },
+        { page: 'templates', ref: 'guideNavTemplates', title: '最后完善模板', desc: '在模板库里维护评论/私信模板，提升回复效果和多样性。' },
+      ]
+    },
+
+    // ══════════════════════════════
+    // Init
+    // ══════════════════════════════
+    async init() {
+      await this.loadStats();
+      await this.loadSchedulerStatus();
+      await this.checkRunningTasks();
+      setTimeout(() => this.startGuide(false), 450);
+      window.addEventListener('resize', () => { if (this.guide.active) this.positionGuidePopover(); });
+      // 每30秒刷新统计和任务状态
+      setInterval(() => this.loadSchedulerStatus(), 30000);
+      setInterval(() => this.checkRunningTasks(), 5000);
+    },
+
+    switchPage(p) {
+      this.page = p;
+      const titles = { dashboard: '仪表盘', accounts: '账号池管理', posts: '帖子管理', tasks: '任务控制', templates: '模板库', logs: '回复日志', settings: '配置' };
+      this.pageTitle = titles[p] || p;
+      if (p === 'dashboard') this.loadStats();
+      if (p === 'accounts') this.loadAccounts();
+      if (p === 'posts') { this.selectedPosts = []; this.loadPosts(1); this.loadKeywords(); }
+      if (p === 'templates') this.loadTemplates();
+      if (p === 'logs') this.loadLogs(1);
+      if (p === 'settings') this.loadConfig();
+      if (p === 'tasks') this.loadSchedulerStatus();
+      if (this.guide.active) this.$nextTick(() => this.applyGuideStep());
+    },
+
+    // ══════════════════════════════
+    // Accounts
+    // ══════════════════════════════
+    async loadAccounts() {
+      const data = await this.api('/api/accounts');
+      this.accounts = data || [];
+    },
+
+    async deleteAccount(id) {
+      if (!confirm('确定删除该账号？')) return;
+      await this.api(`/api/accounts/${id}`, 'DELETE');
+      this.showToast('账号已删除');
+      this.loadAccounts();
+    },
+
+    async toggleAccount(id) {
+      const data = await this.api(`/api/accounts/${id}/toggle`, 'POST', {});
+      if (data) this.showToast(data.message);
+      this.loadAccounts();
+    },
+
+    async startLogin() {
+      this.loginState = { showModal: true, session_id: null, status: 'init', qrcode: '', error: '', install_progress: '' };
+      const data = await this.api('/api/login/start', 'POST', {});
+      if (!data) {
+        this.loginState.showModal = false;
+        return;
+      }
+      this.loginState.session_id = data.session_id;
+      this.pollLogin(data.session_id);
+    },
+
+    pollLogin(sessionId) {
+      clearInterval(this.loginPollTimer);
+      this.loginPollTimer = setInterval(async () => {
+        const data = await this.api(`/api/login/status?session_id=${sessionId}`);
+        if (!data || !this.loginState.showModal) {
+            clearInterval(this.loginPollTimer);
+            return;
+        }
+        this.loginState.status = data.status;
+        this.loginState.qrcode = data.qrcode;
+        if (data.install_progress) this.loginState.install_progress = data.install_progress;
+        if (data.status === 'success' || data.status === 'failed') {
+            clearInterval(this.loginPollTimer);
+            this.loginState.error = data.error || '';
+        }
+      }, 1500);
+    },
+
+    // ══════════════════════════════
+    // Dashboard
+    // ══════════════════════════════
+    async loadStats() {
+      const data = await this.api('/api/stats');
+      if (!data) return;
+      this.stats = data;
+      this.$nextTick(() => {
+        this.renderDailyChart(data.daily_new || []);
+        this.renderStatusChart(data);
+      });
+    },
+
+    renderDailyChart(daily) {
+      const ctx = document.getElementById('dailyChart');
+      if (!ctx) return;
+      if (this.dailyChartObj) this.dailyChartObj.destroy();
+      this.dailyChartObj = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: daily.map(d => d.date),
+          datasets: [{ label: '新增帖子', data: daily.map(d => d.count),
+            backgroundColor: 'rgba(99,102,241,0.15)', borderColor: 'rgb(99,102,241)',
+            borderWidth: 2, borderRadius: 4 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: 'rgba(0,0,0,0.04)' } },
+            x: { grid: { display: false } } } }
+      });
+    },
+
+    renderStatusChart(data) {
+      const ctx = document.getElementById('statusChart');
+      if (!ctx) return;
+      if (this.statusChartObj) this.statusChartObj.destroy();
+      this.statusChartObj = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['待回复', '已回复', '已跳过', '失败'],
+          datasets: [{ data: [data.pending||0, data.replied||0, data.skipped||0, data.failed||0],
+            backgroundColor: ['#fbbf24','#34d399','#d1d5db','#f87171'],
+            borderWidth: 0 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, cutout: '70%',
+          plugins: { legend: { display: false } } }
+      });
+    },
+
+    // ══════════════════════════════
+    // Posts
+    // ══════════════════════════════
+    async loadPosts(page = 1) {
+      this.postsPage = page;
+      const f = this.postsFilter;
+      const data = await this.api(`/api/posts?page=${page}&size=20&status=${f.status}&keyword=${f.keyword}&min_score=${f.min_score}&sort=${f.sort}`);
+      if (!data) return;
+      this.posts = data.items; this.postsTotal = data.total; this.postsPages = data.pages;
+    },
+
+    async deletePost(noteId) {
+      if (!confirm('确认删除该帖子及其回复记录？此操作不可恢复。')) return;
+      const data = await this.api(`/api/posts/${noteId}`, 'DELETE');
+      if (!data) return;
+      this.showToast('帖子已删除');
+      this.posts = this.posts.filter(p => p.note_id !== noteId);
+      this.selectedPosts = this.selectedPosts.filter(id => id !== noteId);
+      this.postsTotal = Math.max(0, this.postsTotal - 1);
+    },
+
+    toggleSelectAll(checked) {
+      this.selectedPosts = checked ? this.posts.map(p => p.note_id) : [];
+    },
+
+    async batchDeletePosts() {
+      if (this.selectedPosts.length === 0) return;
+      if (!confirm(`确认批量删除 ${this.selectedPosts.length} 条帖子及其回复记录？此操作不可恢复。`)) return;
+      const data = await this.api('/api/posts/batch-delete', 'POST', { note_ids: this.selectedPosts });
+      if (!data) return;
+      this.showToast(data.message);
+      this.posts = this.posts.filter(p => !this.selectedPosts.includes(p.note_id));
+      this.postsTotal = Math.max(0, this.postsTotal - this.selectedPosts.length);
+      this.selectedPosts = [];
+    },
+
+    async loadKeywords() {
+      const data = await this.api('/api/posts/keywords');
+      this.keywords = data || [];
+    },
+
+    statusBadge(s) {
+      const map = { pending:'bg-amber-100 text-amber-700', replied_comment:'bg-blue-100 text-blue-700',
+        replied_dm:'bg-cyan-100 text-cyan-700', replied_both:'bg-emerald-100 text-emerald-700',
+        skipped:'bg-gray-100 text-gray-500', failed:'bg-red-100 text-red-600' };
+      return map[s] || 'bg-gray-100 text-gray-500';
+    },
+
+    statusLabel(s) {
+      const map = { pending:'待回复', replied_comment:'已评论', replied_dm:'已私信',
+        replied_both:'已全部回复', skipped:'已跳过', failed:'失败' };
+      return map[s] || s;
+    },
+
+    // ══════════════════════════════
+    // Tasks
+    // ══════════════════════════════
+    async startCrawl() {
+      const body = {};
+      if (this.crawlParams.keyword) body.keyword = this.crawlParams.keyword;
+      if (this.crawlParams.pages) body.pages = this.crawlParams.pages;
+      const data = await this.api('/api/tasks/crawl', 'POST', body);
+      if (!data) return;
+      this.showToast('抓取任务已启动');
+      this.activeLog = 'crawl'; this.crawlLog = '▶ 任务已提交，等待执行...\n';
+      this.hasCrawlRunning = true;
+      this.pollTask('crawl', data.task_id);
+    },
+
+    async startReply() {
+      const body = { dry_run: this.replyParams.dry_run };
+      if (this.replyParams.count) body.count = this.replyParams.count;
+      if (this.replyParams.keyword) body.keyword = this.replyParams.keyword;
+      const data = await this.api('/api/tasks/reply', 'POST', body);
+      if (!data) return;
+      this.showToast('回复任务已启动');
+      this.activeLog = 'reply'; this.replyLog = '▶ 任务已提交，等待执行...\n';
+      this.hasReplyRunning = true;
+      this.pollTask('reply', data.task_id);
+    },
+
+    async startReplyAll() {
+      const body = { dry_run: this.replyParams.dry_run, force_all: true };
+      if (this.replyParams.count) body.count = this.replyParams.count;
+      if (this.replyParams.keyword) body.keyword = this.replyParams.keyword;
+      const data = await this.api('/api/tasks/reply', 'POST', body);
+      if (!data) return;
+      this.showToast('全量回复任务已启动（忽略热度门槛）');
+      this.activeLog = 'reply'; this.replyLog = '▶ 全量回复任务已提交...\n';
+      this.hasReplyRunning = true;
+      this.pollTask('reply', data.task_id);
+    },
+
+    parseImagePaths(raw) {
+      if (!raw) return [];
+      return raw.split(',').map(s => s.trim()).filter(Boolean);
+    },
+
+    async quickCrawl() {
+      const data = await this.api('/api/tasks/crawl', 'POST', {});
+      if (!data) return;
+      this.showToast('抓取任务已启动');
+      this.hasCrawlRunning = true;
+      this.crawlLog = '▶ 任务已提交...\n';
+      this.pollTask('crawl', data.task_id);
+    },
+
+    async quickReply() {
+      const body = {};
+      if (this.quickReplyCount) body.count = this.quickReplyCount;
+      const data = await this.api('/api/tasks/reply', 'POST', body);
+      if (!data) return;
+      this.showToast('回复任务已启动');
+      this.hasReplyRunning = true;
+      this.replyLog = '▶ 任务已提交...\n';
+      this.pollTask('reply', data.task_id);
+    },
+
+    async quickReplyAll() {
+      const body = { force_all: true };
+      if (this.quickReplyCount) body.count = this.quickReplyCount;
+      const data = await this.api('/api/tasks/reply', 'POST', body);
+      if (!data) return;
+      this.showToast('全量回复任务已启动');
+      this.hasReplyRunning = true;
+      this.replyLog = '▶ 全量回复任务已提交...\n';
+      this.pollTask('reply', data.task_id);
+    },
+
+    async cancelTask(type) {
+      const data = await this.api(`/api/tasks/${type}/cancel`, 'POST', {});
+      if (!data) return;
+      this.showToast(`${type === 'crawl' ? '抓取' : '回复'}任务已停止`, 'info');
+      if (type === 'crawl') { this.hasCrawlRunning = false; this.crawlLog += '\n⛔ 已手动停止'; }
+      else if (type === 'reply') { this.hasReplyRunning = false; this.replyLog += '\n⛔ 已手动停止'; }
+    },
+
+    pollTask(type, taskId) {
+      let failCount = 0;
+      const interval = setInterval(async () => {
+        // 静默模式：服务器重载后任务丢失会返回 404，不弹错误提示
+        const data = await this.api(`/api/tasks/${taskId}`, 'GET', null, true);
+        if (!data) {
+          failCount++;
+          // 连续 3 次请求失败（404 / 网络错误），认为任务已不存在，停止轮询
+          if (failCount >= 3) {
+            clearInterval(interval);
+            if (type === 'crawl') this.hasCrawlRunning = false;
+            else if (type === 'reply') this.hasReplyRunning = false;
+            
+          }
+          return;
+        }
+        failCount = 0;
+        const logStr = (data.logs || []).join('\n');
+        if (type === 'crawl') {
+          this.crawlLog = logStr;
+          this.hasCrawlRunning = data.status === 'running';
+        } else if (type === 'reply') {
+          this.replyLog = logStr;
+          this.hasReplyRunning = data.status === 'running';
+        }
+        // auto scroll log
+        this.$nextTick(() => {
+          const el = document.getElementById('logContainer');
+          if (el) el.scrollTop = el.scrollHeight;
+        });
+        if (data.status !== 'running') {
+          clearInterval(interval);
+          if (data.status === 'done') {
+            this.showToast(
+              type === 'crawl'
+                ? `抓取完成，新增 ${data.result?.total_new ?? 0} 条`
+                : `回复完成，处理 ${data.result?.total ?? 0} 条`
+            );
+            this.loadStats();
+          } else if (data.status === 'failed') {
+            this.showToast('任务执行失败: ' + data.error, 'error');
+          }
+        }
+      }, 2000);
+    },
+
+    async checkRunningTasks() {
+      const data = await this.api('/api/tasks/status');
+      if (!data) return;
+      if (data.crawl && data.crawl.status === 'running') {
+        if (!this.hasCrawlRunning) {
+          this.hasCrawlRunning = true;
+          this.pollTask('crawl', data.crawl.task_id);
+        }
+      }
+      if (data.reply && data.reply.status === 'running') {
+        if (!this.hasReplyRunning) {
+          this.hasReplyRunning = true;
+          this.pollTask('reply', data.reply.task_id);
+        }
+      }
+    },
+
+    // ══════════════════════════════
+    // Scheduler
+    // ══════════════════════════════
+    async loadSchedulerStatus() {
+      const data = await this.api('/api/scheduler/status');
+      if (!data) return;
+      this.schedulerRunning = data.running;
+      this.schedulerJobs = data.jobs || [];
+      this.schedulerCrawlCron = data.crawl_cron || '';
+      this.schedulerReplyCron = data.reply_cron || '';
+      this.schedulerAutoStart = !!data.auto_start;
+    },
+
+    async toggleScheduler() {
+      const endpoint = this.schedulerRunning ? '/api/scheduler/stop' : '/api/scheduler/start';
+      const data = await this.api(endpoint, 'POST', {});
+      if (!data) return;
+      this.showToast(data.message);
+      await this.loadSchedulerStatus();
+    },
+
+    // ══════════════════════════════
+    // Templates
+    // ══════════════════════════════
+    async loadTemplates() {
+      const data = await this.api(`/api/templates?template_type=${this.templateTab}`);
+      this.templates = data || [];
+    },
+
+    openTemplateModal(tpl) {
+      this.editingTpl = tpl;
+      if (tpl) {
+        this.tplForm = { name: tpl.name, content: tpl.content, template_type: tpl.template_type, tags: tpl.tags || '', keywords: tpl.keywords || '', image_paths: tpl.image_paths || '' };
+      } else {
+        this.tplForm = { name: '', content: '', template_type: this.templateTab, tags: '', keywords: '', image_paths: '' };
+      }
+      this.showTemplateModal = true;
+    },
+
+    async saveTpl() {
+      const payload = { ...this.tplForm };
+      if (!payload.name?.trim()) {
+        this.showToast('请先填写模板名称', 'error');
+        return;
+      }
+      if (!(payload.content || '').trim() && !(payload.image_paths || '').trim()) {
+        this.showToast('模板内容和配图不能同时为空', 'error');
+        return;
+      }
+
+      if (this.editingTpl) {
+        const ok = await this.api(`/api/templates/${this.editingTpl.id}`, 'PUT', payload);
+        if (!ok) return;
+        this.showToast('模板已更新');
+      } else {
+        const ok = await this.api('/api/templates', 'POST', payload);
+        if (!ok) return;
+        this.showToast('模板已创建');
+      }
+      this.showTemplateModal = false;
+      this.loadTemplates();
+    },
+
+    async toggleTpl(tpl) {
+      await this.api(`/api/templates/${tpl.id}/toggle`, 'POST', {});
+      this.loadTemplates();
+    },
+
+    async deleteTpl(id) {
+      if (!confirm('确定删除该模板？')) return;
+      await this.api(`/api/templates/${id}`, 'DELETE');
+      this.showToast('模板已删除');
+      this.loadTemplates();
+    },
+
+    insertTplToken(token) {
+      if (!token) return;
+      const cur = this.tplForm.content || '';
+      const sep = cur && !cur.endsWith(' ') && !cur.endsWith('\n') ? ' ' : '';
+      this.tplForm.content = `${cur}${sep}${token}`;
+    },
+    useTplDemo() {
+      this.tplForm.content = '{你好|哈喽|嗨} {{author}}，你这条{{keyword}}内容{很有用|太实用了|我学到了}！';
+    },
+
+    tplImageList() {
+      try {
+        const a = JSON.parse(this.tplForm.image_paths || '[]');
+        return Array.isArray(a) ? a : [];
+      } catch (e) { return []; }
+    },
+    removeTplImage(idx) {
+      const arr = this.tplImageList();
+      arr.splice(idx, 1);
+      this.tplForm.image_paths = arr.length ? JSON.stringify(arr) : '';
+    },
+    async onTplImagesUpload(ev) {
+      const input = ev.target;
+      const files = input.files;
+      if (!files?.length) return;
+      const fd = new FormData();
+      for (let i = 0; i < files.length; i++) fd.append('files', files[i]);
+      const data = await this.apiForm('/api/template-images/upload', fd);
+      input.value = '';
+      if (!data?.paths?.length) return;
+      const merged = [...this.tplImageList(), ...data.paths];
+      this.tplForm.image_paths = JSON.stringify(merged);
+      this.showToast(data.message || ('已添加 ' + data.paths.length + ' 张'));
+    },
+    async apiForm(url, formData) {
+      try {
+        const res = await fetch(url, { method: 'POST', body: formData });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          let msg = data.detail;
+          if (Array.isArray(msg)) msg = msg.map(x => x.msg || x).join('; ');
+          this.showToast(msg || '请求失败', 'error');
+          return null;
+        }
+        return data;
+      } catch (e) {
+        this.showToast('网络错误: ' + e.message, 'error');
+        return null;
+      }
+    },
+
+    // ══════════════════════════════
+    // Logs
+    // ══════════════════════════════
+    async loadLogs(page = 1) {
+      this.logsPage = page;
+      const f = this.logsFilter;
+      const data = await this.api(`/api/logs?page=${page}&size=30&reply_type=${f.type}&success=${f.success}`);
+      if (!data) return;
+      this.logs = data.items; this.logsTotal = data.total;
+      this.logsPages = Math.ceil(data.total / 30);
+    },
+
+    // ══════════════════════════════
+    // Settings
+    // ══════════════════════════════
+    async loadConfig() {
+      const data = await this.api('/api/config');
+      this.configContent = data?.content || '';
+    },
+
+    async saveConfig() {
+      const data = await this.api('/api/config', 'POST', { content: this.configContent });
+      if (data) this.showToast('配置已保存');
+    },
+
+    // ══════════════════════════════
+    // Utilities
+    // ══════════════════════════════
+    async api(url, method = 'GET', body = null, silent = false) {
+      try {
+        const opts = { method, headers: { 'Content-Type': 'application/json' } };
+        if (body && method !== 'GET') opts.body = JSON.stringify(body);
+        const res = await fetch(url, opts);
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          if (!silent) this.showToast(data.detail || '请求失败', 'error');
+          return null;
+        }
+        return data;
+      } catch (e) {
+        this.showToast('网络错误: ' + e.message, 'error');
+        return null;
+      }
+    },
+
+    showToast(msg, type = 'success') {
+      clearTimeout(this.toastTimer);
+      this.toast = { msg, type };
+      this.toastTimer = setTimeout(() => { this.toast = null; }, 3500);
+    },
+
+    startGuide(force = false) {
+      if (!force && localStorage.getItem(this.guide.storageKey) === '1') return;
+      this.guide.active = true;
+      this.guide.stepIndex = 0;
+      this.applyGuideStep();
+    },
+    applyGuideStep() {
+      if (!this.guide.active) return;
+      this.cleanupGuideHighlight();
+      const step = this.guide.steps[this.guide.stepIndex];
+      if (!step) return;
+      this.guide.currentStep = step;
+      if (this.page !== step.page) {
+        this.switchPage(step.page);
+        this.$nextTick(() => this.applyGuideStep());
+        return;
+      }
+      this.$nextTick(() => {
+        const el = this.$refs[step.ref];
+        if (!el) return;
+        this.guide.highlightEl = el;
+        el.classList.add('guide-highlight');
+        try {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+        } catch (_) {}
+        this.positionGuidePopover();
+      });
+    },
+    positionGuidePopover() {
+      const el = this.guide.highlightEl;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const padding = 12;
+      const popW = Math.min(360, window.innerWidth - 24);
+      let left = rect.left;
+      if (left + popW > window.innerWidth - padding) left = window.innerWidth - popW - padding;
+      if (left < padding) left = padding;
+      let top = rect.bottom + 10;
+      if (top + 190 > window.innerHeight - padding) top = rect.top - 200;
+      if (top < padding) top = padding;
+      this.guide.popoverLeft = left;
+      this.guide.popoverTop = top;
+    },
+    cleanupGuideHighlight() {
+      if (this.guide.highlightEl) {
+        this.guide.highlightEl.classList.remove('guide-highlight');
+        this.guide.highlightEl = null;
+      }
+    },
+    nextGuideStep() {
+      if (this.guide.stepIndex >= this.guide.steps.length - 1) {
+        this.finishGuide();
+        return;
+      }
+      this.guide.stepIndex += 1;
+      this.applyGuideStep();
+    },
+    prevGuideStep() {
+      if (this.guide.stepIndex <= 0) return;
+      this.guide.stepIndex -= 1;
+      this.applyGuideStep();
+    },
+    skipGuide() {
+      this.finishGuide();
+    },
+    finishGuide() {
+      localStorage.setItem(this.guide.storageKey, '1');
+      this.cleanupGuideHighlight();
+      this.guide.active = false;
+      this.guide.currentStep = null;
+      this.showToast('新手引导已完成，可在右上角随时重新打开');
+    },
+  }
+}
+</script>
+</body>
+</html>

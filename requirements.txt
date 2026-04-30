@@ -1,0 +1,39 @@
+# 小红书自动化回复系统依赖
+
+# Web 服务
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+jinja2>=3.1.4
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+
+# 小红书非官方API
+xhs>=0.2.13
+xhshow
+
+# 数据库
+SQLAlchemy>=2.0.0
+
+# 任务调度
+APScheduler>=3.10.0
+
+# HTTP请求
+httpx>=0.27.0
+requests>=2.31.0
+
+# 配置管理
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# CLI界面
+rich>=13.7.0
+click>=8.1.7
+
+# 日志
+loguru>=0.7.2
+
+# 工具
+tenacity>=8.2.3
+fake-useragent>=1.5.1
+playwright>=1.52.0
+

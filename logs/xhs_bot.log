@@ -1,0 +1,1173 @@
+2026-04-29 15:51:59 | INFO     | templates.template_manager:75 | 从 default_templates.json 导入了 14 条模板
+2026-04-29 16:11:43 | INFO     | replier.auto_replier:85 | 没有待回复的热门帖子
+2026-04-29 16:11:53 | INFO     | replier.auto_replier:85 | 没有待回复的热门帖子
+2026-04-29 16:35:24 | INFO     | crawler.login_manager:73 | [65b0ae72-9dec-4302-aad5-6c46da7cf85a] 启动浏览器实例
+2026-04-29 16:35:24 | ERROR    | crawler.login_manager:153 | [65b0ae72-9dec-4302-aad5-6c46da7cf85a] 登录工作流异常: BrowserType.launch: Executable doesn't exist at C:\Users\Administrator\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-04-29 16:35:28 | INFO     | crawler.login_manager:73 | [e6ba77d0-224f-4330-8a4e-1dcaa394faef] 启动浏览器实例
+2026-04-29 16:35:28 | ERROR    | crawler.login_manager:153 | [e6ba77d0-224f-4330-8a4e-1dcaa394faef] 登录工作流异常: BrowserType.launch: Executable doesn't exist at C:\Users\Administrator\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-04-29 16:35:39 | INFO     | crawler.login_manager:73 | [7a1e4419-dfae-458f-8b20-7d33bc4f3b60] 启动浏览器实例
+2026-04-29 16:35:39 | ERROR    | crawler.login_manager:153 | [7a1e4419-dfae-458f-8b20-7d33bc4f3b60] 登录工作流异常: BrowserType.launch: Executable doesn't exist at C:\Users\Administrator\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-04-29 16:43:56 | INFO     | crawler.login_manager:73 | [335119fc-7053-4966-81e7-fdeefe316673] 启动浏览器实例
+2026-04-29 16:43:56 | ERROR    | crawler.login_manager:153 | [335119fc-7053-4966-81e7-fdeefe316673] 登录工作流异常: BrowserType.launch: Executable doesn't exist at C:\Users\Administrator\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-04-29 16:44:15 | INFO     | crawler.login_manager:29 | Chromium 未安装，正在自动安装（约100MB，请稍候）...
+2026-04-29 16:44:45 | ERROR    | crawler.login_manager:37 | Chromium 安装失败: 
+2026-04-29 16:49:37 | INFO     | crawler.login_manager:31 | [3a1316a2] 开始自动安装 Chromium...
+2026-04-29 16:52:32 | INFO     | crawler.login_manager:43 | [playwright install] Downloading Chrome for Testing 147.0.7727.15 (playwright chromium v1217) from https://cdn.playwright.dev/builds/cft/147.0.7727.15/win64/chrome-win64.zip
+2026-04-29 16:52:34 | INFO     | crawler.login_manager:43 | [playwright install] |                                                                                |   0% of 179.4 MiB
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\server\registry\index.js:995
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] throw new Error(`${err.message} Path: ${lockfilePath}`);
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] ^
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator\AppData\Local\ms-playwright\__dirlock' Path: C:\Users\Administrator\AppData\Local\ms-playwright\__dirlock
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] at Object.onCompromised (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\server\registry\index.js:995:17)
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] at Ff (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:190:12690)
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] at C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:190:11989
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] at y (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:189:7694)
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] at FSReqCallback.oncomplete (node:fs:195:21)
+2026-04-29 16:56:58 | INFO     | crawler.login_manager:43 | [playwright install] Node.js v24.14.1
+2026-04-29 16:56:58 | ERROR    | crawler.login_manager:190 | [3a1316a2] 登录工作流异常: Chromium 自动安装失败，请手动执行：python -m playwright install chromium
+2026-04-29 16:58:39 | INFO     | crawler.login_manager:31 | [5f869dba] 开始自动安装 Chromium...
+2026-04-29 16:58:40 | INFO     | crawler.login_manager:43 | [playwright install] Downloading Chrome for Testing 147.0.7727.15 (playwright chromium v1217) from https://cdn.playwright.dev/builds/cft/147.0.7727.15/win64/chrome-win64.zip
+2026-04-29 16:58:42 | INFO     | crawler.login_manager:43 | [playwright install] |                                                                                |   0% of 179.4 MiB
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\server\registry\index.js:995
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] throw new Error(`${err.message} Path: ${lockfilePath}`);
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] ^
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] Error: ENOENT: no such file or directory, stat 'C:\Users\Administrator\AppData\Local\ms-playwright\__dirlock' Path: C:\Users\Administrator\AppData\Local\ms-playwright\__dirlock
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] at Object.onCompromised (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\server\registry\index.js:995:17)
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] at Ff (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:190:12690)
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] at C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:190:11989
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] at y (C:\Users\Administrator\miniconda3\Lib\site-packages\playwright\driver\package\lib\utilsBundleImpl\index.js:189:7694)
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] at FSReqCallback.oncomplete (node:fs:195:21)
+2026-04-29 16:59:40 | INFO     | crawler.login_manager:43 | [playwright install] Node.js v24.14.1
+2026-04-29 16:59:40 | ERROR    | crawler.login_manager:190 | [5f869dba] 登录工作流异常: Chromium 自动安装失败，请手动执行：python -m playwright install chromium
+2026-04-29 17:00:10 | INFO     | crawler.login_manager:34 | [8bcf555e] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:00:10 | INFO     | crawler.login_manager:134 | [8bcf555e] 启动浏览器实例
+2026-04-29 17:00:13 | INFO     | crawler.login_manager:177 | [8bcf555e] 二维码已获取，等待扫码...
+2026-04-29 17:00:13 | SUCCESS  | crawler.login_manager:217 | [8bcf555e] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:00:44 | INFO     | crawler.login_manager:34 | [54f84cb9] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:00:44 | INFO     | crawler.login_manager:134 | [54f84cb9] 启动浏览器实例
+2026-04-29 17:00:47 | INFO     | crawler.login_manager:177 | [54f84cb9] 二维码已获取，等待扫码...
+2026-04-29 17:00:47 | SUCCESS  | crawler.login_manager:217 | [54f84cb9] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:04:05 | INFO     | crawler.login_manager:36 | [72d75712] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:04:05 | INFO     | crawler.login_manager:137 | [72d75712] 启动浏览器实例
+2026-04-29 17:04:06 | ERROR    | crawler.login_manager:233 | [72d75712] 登录工作流异常: BrowserType.launch: Pass user_data_dir parameter to 'browser_type.launch_persistent_context(user_data_dir, **kwargs)' instead of specifying '--user-data-dir' argument
+2026-04-29 17:04:36 | INFO     | replier.auto_replier:100 | 没有待回复的热门帖子
+2026-04-29 17:04:44 | INFO     | scheduler.task_scheduler:81 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-29 17:04:44 | INFO     | scheduler.task_scheduler:82 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-29 17:04:44 | SUCCESS  | scheduler.task_scheduler:41 | 调度器已启动，已注册任务：
+2026-04-29 17:04:44 | INFO     | scheduler.task_scheduler:43 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-29 20:00:00+08:00
+2026-04-29 17:04:44 | INFO     | scheduler.task_scheduler:43 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-29 21:00:00+08:00
+2026-04-29 17:04:46 | INFO     | scheduler.task_scheduler:53 | 调度器已停止
+2026-04-29 17:06:22 | INFO     | crawler.login_manager:36 | [c6e39016] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:06:22 | INFO     | crawler.login_manager:137 | [c6e39016] 启动浏览器实例
+2026-04-29 17:06:42 | ERROR    | crawler.login_manager:227 | [c6e39016] 登录工作流异常: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("img.qrcode-img") to be visible
+
+2026-04-29 17:11:14 | INFO     | crawler.login_manager:36 | [73b200ee] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:11:14 | INFO     | crawler.login_manager:137 | [73b200ee] 启动浏览器实例
+2026-04-29 17:11:22 | INFO     | crawler.login_manager:198 | [73b200ee] QR 选择器命中: img.qrcode-img
+2026-04-29 17:11:22 | INFO     | crawler.login_manager:212 | [73b200ee] 二维码已获取，等待扫码...
+2026-04-29 17:11:22 | SUCCESS  | crawler.login_manager:252 | [73b200ee] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:11:34 | INFO     | crawler.login_manager:36 | [dfda4828] 检测到系统 Chrome，直接使用，跳过下载
+2026-04-29 17:11:34 | INFO     | crawler.login_manager:137 | [dfda4828] 启动浏览器实例
+2026-04-29 17:11:42 | INFO     | crawler.login_manager:198 | [dfda4828] QR 选择器命中: img.qrcode-img
+2026-04-29 17:11:42 | INFO     | crawler.login_manager:212 | [dfda4828] 二维码已获取，等待扫码...
+2026-04-29 17:11:42 | SUCCESS  | crawler.login_manager:252 | [dfda4828] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:15:47 | INFO     | crawler.login_manager:36 | [d893e057] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:15:47 | INFO     | crawler.login_manager:150 | [d893e057] 启动浏览器实例
+2026-04-29 17:15:55 | INFO     | crawler.login_manager:211 | [d893e057] QR 选择器命中: img.qrcode-img
+2026-04-29 17:15:55 | INFO     | crawler.login_manager:225 | [d893e057] 二维码已获取，等待扫码...
+2026-04-29 17:15:55 | INFO     | crawler.login_manager:230 | [d893e057] 开始轮询登录状态...
+2026-04-29 17:15:55 | INFO     | crawler.login_manager:239 | [d893e057] 检测到有效登录 Cookie
+2026-04-29 17:15:55 | SUCCESS  | crawler.login_manager:272 | [d893e057] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:19:58 | INFO     | crawler.login_manager:36 | [8a4efe68] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:19:58 | INFO     | crawler.login_manager:150 | [8a4efe68] 启动浏览器实例
+2026-04-29 17:20:06 | INFO     | crawler.login_manager:211 | [8a4efe68] QR 选择器命中: img.qrcode-img
+2026-04-29 17:20:06 | INFO     | crawler.login_manager:225 | [8a4efe68] 二维码已获取，等待扫码...
+2026-04-29 17:20:07 | INFO     | crawler.login_manager:234 | [8a4efe68] 基准 web_session = 030037aec2994b63...
+2026-04-29 17:21:03 | INFO     | crawler.login_manager:244 | [8a4efe68] web_session 已更新，确认登录
+2026-04-29 17:21:03 | SUCCESS  | crawler.login_manager:277 | [8a4efe68] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:27:17 | INFO     | crawler.xhs_crawler:63 | XhsClient 初始化成功
+2026-04-29 17:27:17 | INFO     | crawler.xhs_crawler:115 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:27:17 | WARNING  | crawler.xhs_crawler:119 | [护肤] 第 1 页抓取失败: 'XhsClient' object has no attribute 'get_search_contents'
+2026-04-29 17:27:17 | SUCCESS  | crawler.xhs_crawler:134 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:27:17 | INFO     | crawler.xhs_crawler:115 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:27:17 | WARNING  | crawler.xhs_crawler:119 | [美妆] 第 1 页抓取失败: 'XhsClient' object has no attribute 'get_search_contents'
+2026-04-29 17:27:17 | SUCCESS  | crawler.xhs_crawler:134 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:27:34 | INFO     | crawler.xhs_crawler:63 | XhsClient 初始化成功
+2026-04-29 17:27:34 | INFO     | crawler.xhs_crawler:115 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:27:34 | WARNING  | crawler.xhs_crawler:119 | [护肤] 第 1 页抓取失败: 'XhsClient' object has no attribute 'get_search_contents'
+2026-04-29 17:27:34 | SUCCESS  | crawler.xhs_crawler:134 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:27:34 | INFO     | crawler.xhs_crawler:115 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:27:34 | WARNING  | crawler.xhs_crawler:119 | [美妆] 第 1 页抓取失败: 'XhsClient' object has no attribute 'get_search_contents'
+2026-04-29 17:27:34 | SUCCESS  | crawler.xhs_crawler:134 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:30:18 | INFO     | crawler.xhs_crawler:63 | XhsClient 初始化成功
+2026-04-29 17:30:18 | INFO     | crawler.xhs_crawler:115 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:30:19 | WARNING  | crawler.xhs_crawler:119 | [护肤] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:30:19 | SUCCESS  | crawler.xhs_crawler:134 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:30:19 | INFO     | crawler.xhs_crawler:115 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:30:19 | WARNING  | crawler.xhs_crawler:119 | [美妆] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:30:19 | SUCCESS  | crawler.xhs_crawler:134 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:31:59 | INFO     | crawler.login_manager:36 | [86eb7d8b] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:31:59 | INFO     | crawler.login_manager:150 | [86eb7d8b] 启动浏览器实例
+2026-04-29 17:32:07 | INFO     | crawler.login_manager:211 | [86eb7d8b] QR 选择器命中: img.qrcode-img
+2026-04-29 17:32:07 | INFO     | crawler.login_manager:225 | [86eb7d8b] 二维码已获取，等待扫码...
+2026-04-29 17:32:08 | INFO     | crawler.login_manager:234 | [86eb7d8b] 基准 web_session = 030037aec2846563...
+2026-04-29 17:32:17 | INFO     | crawler.login_manager:244 | [86eb7d8b] web_session 已更新，确认登录
+2026-04-29 17:32:17 | SUCCESS  | crawler.login_manager:277 | [86eb7d8b] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:32:30 | INFO     | crawler.xhs_crawler:63 | XhsClient 初始化成功
+2026-04-29 17:32:30 | INFO     | crawler.xhs_crawler:115 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:32:31 | WARNING  | crawler.xhs_crawler:119 | [护肤] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:32:31 | SUCCESS  | crawler.xhs_crawler:134 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:32:31 | INFO     | crawler.xhs_crawler:115 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:32:31 | WARNING  | crawler.xhs_crawler:119 | [美妆] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:32:31 | SUCCESS  | crawler.xhs_crawler:134 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:33:31 | INFO     | crawler.login_manager:36 | [aed4e4a9] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:33:32 | INFO     | crawler.login_manager:150 | [aed4e4a9] 启动浏览器实例
+2026-04-29 17:33:40 | INFO     | crawler.login_manager:211 | [aed4e4a9] QR 选择器命中: img.qrcode-img
+2026-04-29 17:33:40 | INFO     | crawler.login_manager:225 | [aed4e4a9] 二维码已获取，等待扫码...
+2026-04-29 17:33:41 | INFO     | crawler.login_manager:234 | [aed4e4a9] 基准 web_session = 030037aec284196c...
+2026-04-29 17:33:48 | INFO     | crawler.login_manager:244 | [aed4e4a9] web_session 已更新，确认登录
+2026-04-29 17:33:48 | SUCCESS  | crawler.login_manager:277 | [aed4e4a9] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:34:00 | INFO     | crawler.xhs_crawler:64 | XhsClient 初始化成功
+2026-04-29 17:34:00 | INFO     | crawler.xhs_crawler:116 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:34:00 | WARNING  | crawler.xhs_crawler:120 | [护肤] 第 1 页抓取失败: sign() got an unexpected keyword argument 'web_session'
+2026-04-29 17:34:00 | SUCCESS  | crawler.xhs_crawler:135 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:34:00 | INFO     | crawler.xhs_crawler:116 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:34:00 | WARNING  | crawler.xhs_crawler:120 | [美妆] 第 1 页抓取失败: sign() got an unexpected keyword argument 'web_session'
+2026-04-29 17:34:00 | SUCCESS  | crawler.xhs_crawler:135 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:38:06 | INFO     | crawler.login_manager:36 | [1aec810c] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:38:06 | INFO     | crawler.login_manager:150 | [1aec810c] 启动浏览器实例
+2026-04-29 17:38:14 | INFO     | crawler.login_manager:211 | [1aec810c] QR 选择器命中: img.qrcode-img
+2026-04-29 17:38:14 | INFO     | crawler.login_manager:225 | [1aec810c] 二维码已获取，等待扫码...
+2026-04-29 17:38:15 | INFO     | crawler.login_manager:234 | [1aec810c] 基准 web_session = 030037aec285f463...
+2026-04-29 17:38:22 | INFO     | crawler.login_manager:244 | [1aec810c] web_session 已更新，确认登录
+2026-04-29 17:38:22 | SUCCESS  | crawler.login_manager:277 | [1aec810c] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:38:27 | INFO     | crawler.xhs_crawler:67 | XhsClient 初始化成功
+2026-04-29 17:38:27 | INFO     | crawler.xhs_crawler:119 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:38:27 | WARNING  | crawler.xhs_crawler:123 | [护肤] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:38:27 | SUCCESS  | crawler.xhs_crawler:138 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:38:27 | INFO     | crawler.xhs_crawler:119 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:38:27 | WARNING  | crawler.xhs_crawler:123 | [美妆] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:38:27 | SUCCESS  | crawler.xhs_crawler:138 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:45:18 | INFO     | crawler.sign_bridge:127 | PlaywrightSignBridge: XHS 页面已加载
+2026-04-29 17:45:18 | SUCCESS  | crawler.sign_bridge:86 | PlaywrightSignBridge 已就绪，使用浏览器原生签名
+2026-04-29 17:45:18 | INFO     | crawler.xhs_crawler:77 | XhsClient 初始化成功（Playwright 浏览器签名）
+2026-04-29 17:45:18 | INFO     | crawler.xhs_crawler:129 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:45:19 | WARNING  | crawler.xhs_crawler:133 | [护肤] 第 1 页抓取失败: {'code': -100, 'success': False, 'msg': '登录已过期', 'data': {}}
+2026-04-29 17:45:19 | SUCCESS  | crawler.xhs_crawler:148 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:45:19 | INFO     | crawler.xhs_crawler:129 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:45:19 | WARNING  | crawler.xhs_crawler:133 | [美妆] 第 1 页抓取失败: {'code': -100, 'success': False, 'msg': '登录已过期', 'data': {}}
+2026-04-29 17:45:19 | SUCCESS  | crawler.xhs_crawler:148 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:45:26 | INFO     | crawler.login_manager:36 | [e77ca231] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-29 17:45:26 | INFO     | crawler.login_manager:150 | [e77ca231] 启动浏览器实例
+2026-04-29 17:45:34 | INFO     | crawler.login_manager:211 | [e77ca231] QR 选择器命中: img.qrcode-img
+2026-04-29 17:45:34 | INFO     | crawler.login_manager:225 | [e77ca231] 二维码已获取，等待扫码...
+2026-04-29 17:45:35 | INFO     | crawler.login_manager:234 | [e77ca231] 基准 web_session = 030037aec2874c6c...
+2026-04-29 17:46:34 | INFO     | crawler.login_manager:244 | [e77ca231] web_session 已更新，确认登录
+2026-04-29 17:46:34 | SUCCESS  | crawler.login_manager:277 | [e77ca231] 扫码登录成功！账号: 未命名账号
+2026-04-29 17:46:46 | INFO     | crawler.sign_bridge:127 | PlaywrightSignBridge: XHS 页面已加载
+2026-04-29 17:46:46 | SUCCESS  | crawler.sign_bridge:86 | PlaywrightSignBridge 已就绪，使用浏览器原生签名
+2026-04-29 17:46:46 | INFO     | crawler.xhs_crawler:77 | XhsClient 初始化成功（Playwright 浏览器签名）
+2026-04-29 17:46:46 | INFO     | crawler.xhs_crawler:129 | [护肤] 正在抓取第 1/3 页 ...
+2026-04-29 17:46:46 | WARNING  | crawler.xhs_crawler:133 | [护肤] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:46:46 | SUCCESS  | crawler.xhs_crawler:148 | [护肤] 抓取完成：共 0 条，新增 0 条
+2026-04-29 17:46:46 | INFO     | crawler.xhs_crawler:129 | [美妆] 正在抓取第 1/3 页 ...
+2026-04-29 17:46:46 | WARNING  | crawler.xhs_crawler:133 | [美妆] 第 1 页抓取失败: {'code': 300011, 'success': False, 'msg': '当前账号存在异常，请切换账号后重试', 'data': {}}
+2026-04-29 17:46:46 | SUCCESS  | crawler.xhs_crawler:148 | [美妆] 抓取完成：共 0 条，新增 0 条
+2026-04-30 10:53:46 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 10:53:46 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 10:53:46 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 10:53:46 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 10:53:46 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 10:53:46 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 10:54:12 | INFO     | crawler.login_manager:37 | [47b0aa83] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-30 10:54:12 | ERROR    | crawler.login_manager:327 | [47b0aa83] 登录工作流异常: No module named 'playwright'
+2026-04-30 11:04:07 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:04:07 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 11:04:09 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:04:09 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:04:09 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:04:09 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:04:09 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:04:09 | INFO     | web.app:44 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:05:31 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:05:31 | INFO     | web.app:51 | 应用退出，定时调度器已停止
+2026-04-30 11:05:33 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:05:33 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:05:33 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:05:33 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:05:33 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:05:33 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:11:36 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:11:36 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:11:38 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:11:38 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:11:38 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:11:38 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:11:38 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:11:38 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:12:46 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:12:46 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:12:48 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:12:48 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:12:48 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:12:48 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:12:48 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:12:48 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:13:40 | INFO     | device_runner.appium_session:61 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=12
+2026-04-30 11:14:05 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:14:05 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:14:06 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:14:06 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:14:06 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:14:06 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:14:06 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:14:06 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:14:45 | INFO     | device_runner.appium_session:61 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:18:46 | INFO     | device_runner.appium_session:61 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:24:07 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:24:07 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:24:09 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:24:09 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:24:09 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:24:09 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:24:09 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:24:09 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:24:43 | INFO     | replier.device_replier:152 | ⏸ 今日成功评论 8 条，达到风控上限 8 条，已停止发送
+2026-04-30 11:26:11 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:26:11 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:26:13 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:26:13 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:26:13 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:26:13 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:26:13 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:26:13 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:26:22 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:26:22 | INFO     | device_runner.appium_session:61 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:29:12 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:29:12 | INFO     | device_runner.appium_session:61 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:29:29 | INFO     | replier.device_replier:152 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:29:29 | INFO     | replier.device_replier:152 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:29:39 | INFO     | device_runner.xhs_actions:163 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:30:07 | INFO     | replier.device_replier:152 |   [评论] 真机发送失败: Message: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\find.js:24:13)
+    at async doFind (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:24:23)
+    at async wrappedCondFn (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:97:20)
+    at async spin (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:174:24)
+    at async waitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:192:12)
+    at async AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:99:16)
+    at async AndroidUiautomator2Driver.findElOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:45:9)
+    at async AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:12:16)
+    at async AndroidUiautomator2Driver.findElement (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:27:16)
+2026-04-30 11:30:11 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:30:11 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:30:17 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:30:17 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:30:17 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:30:17 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:30:17 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:30:17 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:30:47 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:30:47 | INFO     | device_runner.appium_session:97 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:31:17 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:31:17 | INFO     | device_runner.appium_session:97 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:34:46 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:34:46 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:34:53 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:34:53 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:34:53 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:34:53 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:34:53 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:34:53 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:35:01 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:35:01 | INFO     | device_runner.appium_session:110 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:35:07 | INFO     | replier.device_replier:152 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:35:07 | INFO     | replier.device_replier:152 |   [评论] 模板「特»特别好用！！！…
+2026-04-30 11:35:07 | INFO     | replier.device_replier:152 |   [评论] 待发图片 1 张
+2026-04-30 11:35:20 | INFO     | replier.device_replier:152 |   [评论] 真机发送失败: 未找到 adb，请先安装 Android Platform Tools 并加入 PATH
+2026-04-30 11:35:56 | INFO     | replier.device_replier:152 | [2/5] 处理帖子「征信錵🌸，查询多，车抵贷可以吗？」  score=43.5
+2026-04-30 11:35:56 | INFO     | replier.device_replier:152 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:36:09 | INFO     | device_runner.xhs_actions:163 | [App] 打开帖子: xhsdiscover://item/69df2814000000001f004608
+2026-04-30 11:38:41 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:38:41 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:38:48 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:38:48 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:38:48 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:38:48 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:38:48 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:38:48 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:39:12 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:39:12 | INFO     | device_runner.appium_session:110 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:39:17 | INFO     | replier.device_replier:152 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:39:17 | INFO     | replier.device_replier:152 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:39:22 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:40:12 | INFO     | replier.device_replier:152 |   [评论] 真机发送失败: Message: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: Could not proxy command to the remote server. Original error: socket hang up
+    at ProxyRequestError.getActualError (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:678:16)
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:270:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\find.js:24:13)
+    at async doFind (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:24:23)
+    at async wrappedCondFn (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:97:20)
+    at async spin (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:174:24)
+    at async waitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:192:12)
+    at async AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:99:16)
+    at async AndroidUiautomator2Driver.findElOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:45:9)
+    at async AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:12:16)
+    at async AndroidUiautomator2Driver.findElement (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:27:16)
+2026-04-30 11:40:46 | INFO     | replier.device_replier:152 | [2/5] 处理帖子「征信錵🌸，查询多，车抵贷可以吗？」  score=43.5
+2026-04-30 11:40:46 | INFO     | replier.device_replier:152 |   [评论] 模板「特»特别好用！！！…
+2026-04-30 11:40:46 | INFO     | replier.device_replier:152 |   [评论] 待发图片 1 张
+2026-04-30 11:41:01 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/69df2814000000001f004608
+2026-04-30 11:41:14 | INFO     | replier.device_replier:152 |   [评论] 真机发送失败: Message: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\find.js:24:13)
+    at async doFind (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:24:23)
+    at async wrappedCondFn (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:97:20)
+    at async spin (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:174:24)
+    at async waitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:192:12)
+    at async AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:99:16)
+    at async AndroidUiautomator2Driver.findElOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:45:9)
+    at async AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:12:16)
+    at async AndroidUiautomator2Driver.findElement (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:27:16)
+2026-04-30 11:41:14 | INFO     | replier.device_replier:152 | ⛔ 连续失败达阈值，熔断停止
+2026-04-30 11:41:15 | INFO     | replier.device_replier:152 | 批次完成：共 5 | 评论成功 0 | 失败 2
+2026-04-30 11:41:39 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:41:39 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:41:39 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:41:39 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:41:39 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:41:39 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:41:39 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:41:39 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:41:47 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:41:47 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:41:48 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:41:48 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:41:48 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:41:48 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:41:48 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:41:48 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:42:03 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:42:03 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:42:04 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:42:04 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:42:04 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:42:04 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:42:04 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:42:04 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:42:16 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:42:16 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:42:17 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:42:17 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:42:17 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:42:17 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:42:17 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:42:17 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:43:05 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:43:05 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:43:06 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:43:06 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:43:06 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:43:06 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:43:06 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:43:06 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:43:22 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:43:22 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:43:25 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:43:25 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:43:25 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:43:25 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:43:25 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:43:25 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:44:01 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:44:02 | DEBUG    | device_runner.appium_session:61 | [Appium] 读取会话列表失败: HTTP Error 404: Not Found
+2026-04-30 11:44:02 | INFO     | device_runner.appium_session:184 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:44:07 | INFO     | replier.device_replier:152 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:44:07 | INFO     | replier.device_replier:152 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:44:14 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:46:08 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:46:08 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:47:45 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:47:45 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:47:45 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:47:45 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:47:45 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:47:45 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:47:51 | INFO     | replier.device_replier:152 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:47:51 | DEBUG    | device_runner.appium_session:61 | [Appium] 读取会话列表失败: HTTP Error 404: Not Found
+2026-04-30 11:47:51 | INFO     | device_runner.appium_session:184 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:47:58 | INFO     | replier.device_replier:152 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:47:58 | INFO     | replier.device_replier:152 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:48:11 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:51:24 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:51:24 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:51:25 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:51:25 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:51:25 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:51:25 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:51:25 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:51:25 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:51:43 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:51:43 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:51:44 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:51:44 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:51:44 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:51:44 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:51:44 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:51:44 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:51:58 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:51:58 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:51:59 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:51:59 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:51:59 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:51:59 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:51:59 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:51:59 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:52:14 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:52:14 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:52:15 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:52:15 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:52:15 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:52:15 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:52:15 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:52:15 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:53:42 | INFO     | replier.device_replier:184 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:53:42 | DEBUG    | device_runner.appium_session:61 | [Appium] 读取会话列表失败: HTTP Error 404: Not Found
+2026-04-30 11:53:42 | INFO     | device_runner.appium_session:184 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:53:49 | INFO     | replier.device_replier:184 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:53:49 | INFO     | replier.device_replier:184 |   [评论] 模板「特»特别好用！！！…
+2026-04-30 11:53:49 | INFO     | replier.device_replier:184 |   [评论] 待发图片 1 张
+2026-04-30 11:54:00 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:54:20 | DEBUG    | replier.device_replier:392 | [Device] 截图保存失败: Message: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: Could not proxy command to the remote server. Original error: socket hang up
+    at ProxyRequestError.getActualError (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:678:16)
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:270:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.getScreenshot (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\screenshot.js:72:19)
+2026-04-30 11:54:20 | DEBUG    | replier.device_replier:396 | [Device] page source 保存失败: Message: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+InvalidContextError: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.proxyCommand (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\uiautomator2.js:32:19)
+    at UIA2Proxy.proxyReqRes (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:325:49)
+    at runCommandPromise (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:122:30)
+    at C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:162:45)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async defaultBehavior (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:574:20)
+    at async AppiumDriver.executeWrappedCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:675:22)
+    at async AppiumDriver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:585:21)
+    at async doJwpProxy (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:504:9)
+    at async asyncHandler (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:353:21)
+2026-04-30 11:54:20 | INFO     | device_runner.xhs_actions:203 | [App] 开始定位底部评论占位条…
+2026-04-30 11:54:28 | WARNING  | device_runner.xhs_actions:224 | [App] 选择器没命中评论占位条，使用坐标兜底: Message: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\find.js:24:13)
+    at async doFind (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:24:23)
+    at async wrappedCondFn (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:97:20)
+    at async spin (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:174:24)
+    at async waitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:192:12)
+    at async AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:99:16)
+    at async AndroidUiautomator2Driver.findElOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:45:9)
+    at async AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:12:16)
+    at async AndroidUiautomator2Driver.findElement (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:27:16)
+2026-04-30 11:54:28 | INFO     | device_runner.xhs_actions:234 | [App] 坐标点击底部评论占位条: (129, 2304) screen=1080x2400
+2026-04-30 11:54:28 | DEBUG    | replier.device_replier:392 | [Device] 截图保存失败: Message: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.getScreenshot (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\screenshot.js:72:19)
+2026-04-30 11:54:28 | DEBUG    | replier.device_replier:396 | [Device] page source 保存失败: Message: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+InvalidContextError: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.proxyCommand (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\uiautomator2.js:32:19)
+    at UIA2Proxy.proxyReqRes (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:325:49)
+    at runCommandPromise (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:122:30)
+    at C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:162:45)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async defaultBehavior (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:574:20)
+    at async AppiumDriver.executeWrappedCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:675:22)
+    at async AppiumDriver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:585:21)
+    at async doJwpProxy (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:504:9)
+    at async asyncHandler (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:353:21)
+2026-04-30 11:54:28 | INFO     | replier.device_replier:184 |   [评论] 真机发送失败: 点击评论占位条失败: Message: 'POST /actions' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /actions' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.performActions (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\actions.js:62:5)
+2026-04-30 11:55:03 | INFO     | replier.device_replier:184 | [2/5] 处理帖子「征信錵🌸，查询多，车抵贷可以吗？」  score=43.5
+2026-04-30 11:55:03 | INFO     | replier.device_replier:184 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:55:16 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/69df2814000000001f004608
+2026-04-30 11:55:19 | DEBUG    | replier.device_replier:392 | [Device] 截图保存失败: Message: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.getScreenshot (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\screenshot.js:72:19)
+2026-04-30 11:55:19 | DEBUG    | replier.device_replier:396 | [Device] page source 保存失败: Message: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+InvalidContextError: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.proxyCommand (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\uiautomator2.js:32:19)
+    at UIA2Proxy.proxyReqRes (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:325:49)
+    at runCommandPromise (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:122:30)
+    at C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:162:45)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async defaultBehavior (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:574:20)
+    at async AppiumDriver.executeWrappedCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:675:22)
+    at async AppiumDriver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:585:21)
+    at async doJwpProxy (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:504:9)
+    at async asyncHandler (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:353:21)
+2026-04-30 11:55:19 | INFO     | device_runner.xhs_actions:203 | [App] 开始定位底部评论占位条…
+2026-04-30 11:55:27 | WARNING  | device_runner.xhs_actions:224 | [App] 选择器没命中评论占位条，使用坐标兜底: Message: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\find.js:24:13)
+    at async doFind (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:24:23)
+    at async wrappedCondFn (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:97:20)
+    at async spin (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:174:24)
+    at async waitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\build\lib\asyncbox.js:192:12)
+    at async AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\timeout.js:99:16)
+    at async AndroidUiautomator2Driver.findElOrEls (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\build\lib\commands\find.js:45:9)
+    at async AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:12:16)
+    at async AndroidUiautomator2Driver.findElement (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\commands\find.js:27:16)
+2026-04-30 11:55:27 | INFO     | device_runner.xhs_actions:234 | [App] 坐标点击底部评论占位条: (129, 2304) screen=1080x2400
+2026-04-30 11:55:27 | DEBUG    | replier.device_replier:392 | [Device] 截图保存失败: Message: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'GET /screenshot' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.getScreenshot (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\screenshot.js:72:19)
+2026-04-30 11:55:27 | DEBUG    | replier.device_replier:396 | [Device] page source 保存失败: Message: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+InvalidContextError: 'GET /session/487080da-4220-4877-9b5a-8f2d40532b12/source' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.proxyCommand (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\uiautomator2.js:32:19)
+    at UIA2Proxy.proxyReqRes (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:325:49)
+    at runCommandPromise (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:122:30)
+    at C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\driver.js:162:45)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async defaultBehavior (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:574:20)
+    at async AppiumDriver.executeWrappedCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:675:22)
+    at async AppiumDriver.executeCommand (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:585:21)
+    at async doJwpProxy (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:504:9)
+    at async asyncHandler (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:353:21)
+2026-04-30 11:55:27 | INFO     | replier.device_replier:184 |   [评论] 真机发送失败: 点击评论占位条失败: Message: 'POST /actions' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+Stacktrace:
+UnknownError: 'POST /actions' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
+    at UIA2Proxy.command (C:\Users\EDY\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\jsonwp-proxy\proxy.js:272:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AndroidUiautomator2Driver.performActions (C:\Users\EDY\.appium\node_modules\appium-uiautomator2-driver\build\lib\commands\actions.js:62:5)
+2026-04-30 11:55:27 | INFO     | replier.device_replier:184 | ⛔ 连续失败达阈值，熔断停止
+2026-04-30 11:55:28 | INFO     | replier.device_replier:184 | 批次完成：共 5 | 评论成功 0 | 失败 2
+2026-04-30 11:56:07 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:07 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:08 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:08 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:08 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:08 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:08 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:08 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:56:20 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:20 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:20 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:20 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:20 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:20 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:20 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:20 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:56:25 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:25 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:26 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:26 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:26 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:26 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:26 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:26 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:56:36 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:36 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:37 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:37 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:37 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:37 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:37 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:37 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:56:45 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:45 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:45 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:45 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:45 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:45 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:45 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:45 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:56:59 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:56:59 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:56:59 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:56:59 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:56:59 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:56:59 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:56:59 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:56:59 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:58:11 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:58:11 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 11:58:14 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 11:58:14 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 11:58:14 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 11:58:14 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 14:00:00+08:00
+2026-04-30 11:58:14 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 15:00:00+08:00
+2026-04-30 11:58:14 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 11:58:27 | INFO     | replier.device_replier:184 | 本批待真机回复帖子数：5（设备 10ACCX3R3U000XE / Android 15）
+2026-04-30 11:58:27 | DEBUG    | device_runner.appium_session:101 | [Appium] 读取会话列表失败: HTTP Error 404: Not Found
+2026-04-30 11:58:27 | INFO     | device_runner.appium_session:241 | [Appium] 连接 http://127.0.0.1:4723 → device=10ACCX3R3U000XE version=15
+2026-04-30 11:58:44 | INFO     | replier.device_replier:184 | [1/5] 处理帖子「68f09274000000000300cb28」  score=43.8
+2026-04-30 11:58:44 | INFO     | replier.device_replier:184 |   [评论] 模板「车抵贷»博主好专业啊！…
+2026-04-30 11:58:49 | INFO     | device_runner.xhs_actions:187 | [App] 打开帖子: xhsdiscover://item/68f09274000000000300cb28
+2026-04-30 11:59:37 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 11:59:37 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 15:26:00 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:26:00 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:26:00 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:26:00 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:26:00 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:26:00 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:27:31 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:27:31 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 15:27:32 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:27:32 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:27:32 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:27:32 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:27:32 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:27:32 | INFO     | web.app:46 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:27:52 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:27:52 | INFO     | web.app:53 | 应用退出，定时调度器已停止
+2026-04-30 15:27:53 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:27:53 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:27:53 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:27:53 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:27:53 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:27:53 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:27:59 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:27:59 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:28:00 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:28:00 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:28:00 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:28:00 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:28:00 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:28:00 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:29:33 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:29:33 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:29:34 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:29:34 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:29:34 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:29:34 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:29:34 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:29:34 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:29:51 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:29:51 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:29:52 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:29:52 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:29:52 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:29:52 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:29:52 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:29:52 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:29:59 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:29:59 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:30:00 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:30:00 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:30:00 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:30:00 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:30:00 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:30:00 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:33:56 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:33:56 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:33:57 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:33:57 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:33:57 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:33:57 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:33:57 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:33:57 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:43:16 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:43:16 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:43:35 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:43:35 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:43:35 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:43:35 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:43:35 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:43:35 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:49:15 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:49:15 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:49:15 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:49:15 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:49:15 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:49:15 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:49:15 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:49:15 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:49:28 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:49:28 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 15:49:38 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:49:38 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:49:38 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:49:38 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:49:38 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:49:38 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:50:19 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:50:19 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:50:58 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:50:58 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:50:58 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:50:58 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:50:58 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:50:58 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:50:58 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:50:58 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:51:04 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:51:04 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:51:04 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:51:04 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:51:04 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:51:04 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:51:04 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:51:04 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:51:42 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:51:42 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:51:42 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:51:42 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:51:42 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:51:42 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:54:02 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:54:02 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:54:02 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:54:02 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:54:02 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:54:02 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:54:11 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:54:11 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 15:54:31 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 15:54:31 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 15:54:31 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 15:54:31 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 15:54:31 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 15:54:31 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 15:55:35 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 15:55:35 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 16:00:29 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 16:00:29 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 16:00:29 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 16:00:29 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 16:00:29 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 16:00:29 | INFO     | web.app:42 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 16:02:14 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 16:02:14 | INFO     | web.app:49 | 应用退出，定时调度器已停止
+2026-04-30 16:02:16 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 16:02:16 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 16:02:16 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 16:02:16 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 16:02:16 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 16:02:16 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 16:02:21 | INFO     | crawler.login_manager:37 | [70099865] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-30 16:02:21 | INFO     | crawler.login_manager:167 | [70099865] 启动浏览器实例
+2026-04-30 16:02:29 | INFO     | crawler.login_manager:228 | [70099865] QR 选择器命中: img.qrcode-img
+2026-04-30 16:02:29 | INFO     | crawler.login_manager:242 | [70099865] 二维码已获取，等待扫码...
+2026-04-30 16:02:30 | INFO     | crawler.login_manager:251 | [70099865] 基准 web_session = 030037aec0597263...
+2026-04-30 16:03:34 | INFO     | crawler.login_manager:264 | [70099865] DOM 检测到「我」按钮，确认登录
+2026-04-30 16:03:34 | INFO     | crawler.login_manager:282 | [70099865] 等待页面跳转完成...
+2026-04-30 16:03:41 | ERROR    | crawler.login_manager:327 | [70099865] 登录工作流异常: BrowserContext.cookies: Target page, context or browser has been closed
+2026-04-30 16:03:44 | INFO     | crawler.login_manager:37 | [1c7e9031] 检测到 Microsoft Edge，使用 Edge 打开登录页
+2026-04-30 16:03:44 | INFO     | crawler.login_manager:167 | [1c7e9031] 启动浏览器实例
+2026-04-30 16:03:51 | INFO     | crawler.login_manager:228 | [1c7e9031] QR 选择器命中: img.qrcode-img
+2026-04-30 16:03:51 | INFO     | crawler.login_manager:242 | [1c7e9031] 二维码已获取，等待扫码...
+2026-04-30 16:03:52 | INFO     | crawler.login_manager:251 | [1c7e9031] 基准 web_session = 030037aec0592c63...
+2026-04-30 16:04:09 | INFO     | crawler.login_manager:264 | [1c7e9031] DOM 检测到「我」按钮，确认登录
+2026-04-30 16:04:09 | INFO     | crawler.login_manager:282 | [1c7e9031] 等待页面跳转完成...
+2026-04-30 16:04:16 | SUCCESS  | crawler.login_manager:322 | [1c7e9031] 扫码登录成功！账号: 未命名账号
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:68 | XhsClient 初始化成功（xhshow 纯算法签名）
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 正在抓取第 1/3 页 ...
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 第 1 页抓取失败: No module named 'xhshow'
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 抓取完成：共 0 条，新增 0 条
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 正在抓取第 1/3 页 ...
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 第 1 页抓取失败: No module named 'xhshow'
+2026-04-30 16:04:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 抓取完成：共 0 条，新增 0 条
+2026-04-30 16:05:14 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 16:05:14 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 16:05:20 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 16:05:20 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 16:05:20 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 16:05:20 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 16:05:20 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 16:05:20 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:68 | XhsClient 初始化成功（xhshow 纯算法签名）
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 正在抓取第 1/3 页 ...
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 第 1 页抓取失败: No module named 'xhshow'
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 抓取完成：共 0 条，新增 0 条
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 正在抓取第 1/3 页 ...
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 第 1 页抓取失败: No module named 'xhshow'
+2026-04-30 16:05:52 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 抓取完成：共 0 条，新增 0 条
+2026-04-30 16:05:55 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 16:05:55 | INFO     | web.app:50 | 应用退出，定时调度器已停止
+2026-04-30 16:06:12 | INFO     | scheduler.task_scheduler:91 | 抓取任务 Cron: 0 9,14,20 * * *
+2026-04-30 16:06:12 | INFO     | scheduler.task_scheduler:92 | 回复任务 Cron: 0 10,15,21 * * *
+2026-04-30 16:06:12 | SUCCESS  | scheduler.task_scheduler:50 | 调度器已启动，已注册任务：
+2026-04-30 16:06:12 | INFO     | scheduler.task_scheduler:52 |   [crawl_all] 定时抓取帖子 → 下次执行: 2026-04-30 20:00:00+08:00
+2026-04-30 16:06:12 | INFO     | scheduler.task_scheduler:52 |   [reply_all] 定时自动回复 → 下次执行: 2026-04-30 21:00:00+08:00
+2026-04-30 16:06:12 | INFO     | web.app:43 | scheduler.auto_start=true，定时调度器已自动启动
+2026-04-30 16:06:14 | INFO     | crawler.xhs_crawler:68 | XhsClient 初始化成功（xhshow 纯算法签名）
+2026-04-30 16:06:14 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 正在抓取第 1/3 页 ...
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'hot_query', 'xsec_token']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'user', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'hot_query', 'xsec_token']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690427480000000004007d12 title='征信差，名下有车可以做抵押贷款吗？' likes=82 comments=118 score=70.3
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ba0846000000001e00e92e title='征信差，名下有车可以办理抵押贷款吗？' likes=23 comments=74 score=58.3
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d733ce000000002003bded title='' likes=17 comments=18 score=47.1
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=695b2b98000000001e03a32d title='汽车周转 押车还是押绿本 看完秒懂' likes=46 comments=18 score=57.5
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693a9a02000000001e0325dd title='车主急用钱？来这里最快1小时到账！' likes=18 comments=4 score=40.6
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ae2556000000001a034e4d title='真正对的车，兜兜转转还会回来' likes=156 comments=34 score=68.3
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=d4b8fe68-978e-4bee-95d1-f907d987337c title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dd99af00000000230262e3 title='征信差，名下有车可以办理抵押贷款吗？' likes=9 comments=12 score=40.5
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e6dbd8000000001b002890 title='' likes=5 comments=12 score=31.1
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ae7c710000000026031eb0 title='' likes=32 comments=17 score=56.2
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e1b37b000000002301789b title='车抵贷 5 大核心套路 + 保命避坑法！' likes=15 comments=14 score=45.8
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68c0019d000000001d02d50b title='' likes=30 comments=23 score=56.6
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dee7e00000000023013263 title='' likes=26 comments=11 score=46.2
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6831bb6d0000000022037f41 title='' likes=5 comments=2 score=19.9
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=692d1110000000001e027246 title='什么情况下适合办理车抵贷？' likes=26 comments=3 score=37.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690483ab0000000007009402 title='' likes=16 comments=16 score=47.7
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=d4b8fe68-978e-4bee-95d1-f907d987337c title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69df263b0000000023012d5f title='安庆想办还没办车抵贷的注意了！' likes=11 comments=11 score=41.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e08326000000002301135e title='成都车主必看！车抵贷避坑全攻略✅再也不踩' likes=6 comments=7 score=31.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e4e32e0000000023015430 title='在成都，办理车抵 贷，需要哪些资料' likes=2 comments=1 score=16.5
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e43d5c000000002102d41d title='押车 vs 二次装G｜车抵贷小白必看🔥' likes=7 comments=11 score=35.0
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dc5f49000000001d01b00f title='押车 vs按揭 二次装G｜车抵贷小白必看' likes=9 comments=11 score=40.5
+2026-04-30 16:06:15 | DEBUG    | crawler.xhs_crawler:135 | 等待 3.2s ...
+2026-04-30 16:06:18 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 正在抓取第 2/3 页 ...
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['hot_query', 'xsec_token', 'id', 'model_type']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'hot_query', 'xsec_token']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68b565da000000001d03bd56 title='' likes=34 comments=35 score=58.1
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e5868b0000000023027ca3 title='车抵贷 5 大核心套路 + 保命避坑法' likes=7 comments=0 score=19.4
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dc41ed000000001a029934 title='车贷和车抵贷的区别，教你一秒会分辨！' likes=2 comments=0 score=7.1
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e070cf000000002301e2df title='' likes=13 comments=58 score=49.6
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693a9a02000000001e0325dd title='车主急用钱？来这里最快1小时到账！' likes=18 comments=4 score=40.6
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e98889000000001a0337a8 title='车抵收费合理不' likes=8 comments=58 score=48.3
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=1a4acb0b-2408-4b2c-b676-f4e2631385d4 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d9ecff000000001d01bfe1 title='超全入行指南这不就来了！😉' likes=2 comments=0 score=7.1
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e053da000000001b0016df title='车抵终于办完了！' likes=1 comments=8 score=21.2
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693bda5d000000001f00de0c title='急用钱不求人！解决资金难题的干货分享🔥' likes=13 comments=4 score=37.9
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e99b4a00000000220022fe title='用车借了3万，收了我1400，是不是坑了' likes=0 comments=0 score=0.0
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69deea17000000001b003941 title='' likes=1 comments=1 score=9.8
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f1a59600000000360310f0 title='平安消费凭证需要怎么弄才可以通过' likes=1 comments=0 score=4.5
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=694974a4000000001e024c78 title='' likes=27 comments=8 score=44.3
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69cb87d90000000021005f90 title='🧧车抵贷避坑速查！30秒看懂，不做冤大头' likes=3 comments=2 score=17.3
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e9c47b000000002301408f title='' likes=11 comments=118 score=52.8
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=1a4acb0b-2408-4b2c-b676-f4e2631385d4 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69c1fee20000000023022b48 title='' likes=6 comments=53 score=47.8
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69c39474000000001d01a5ba title='' likes=4 comments=0 score=10.4
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69eaf598000000002301504d title='' likes=2 comments=1 score=16.5
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e7284a000000001d018c79 title='🆘车抵贷款避坑指南！' likes=2 comments=0 score=7.1
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69eca0ae000000003701e993 title='车抵贷五大坑，不想踩雷的看完这条就够了！' likes=0 comments=0 score=0.0
+2026-04-30 16:06:19 | DEBUG    | crawler.xhs_crawler:135 | 等待 3.5s ...
+2026-04-30 16:06:23 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 正在抓取第 3/3 页 ...
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'hot_query', 'xsec_token']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'hot_query', 'xsec_token']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693a9a02000000001e0325dd title='车主急用钱？来这里最快1小时到账！' likes=18 comments=4 score=40.6
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d49846000000001d01a6a2 title='🔥车本换钱攻略来了！' likes=1 comments=0 score=4.5
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f075f1000000001f0065a7 title='' likes=1 comments=0 score=4.5
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6942d240000000001e028221 title='急用💰别慌！汽车典当攻略，安心周转不踩坑' likes=0 comments=0 score=2.6
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=696908ff000000000b009fa3 title='重庆车抵“水”多深？' likes=0 comments=0 score=2.6
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dc82e8000000002202775a title='征信差，名下有车可以办理抵押贷款吗？' likes=3 comments=4 score=23.8
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=7666be12-6015-4de2-be6c-15409b57be16 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e630420000000023017329 title='车抵贷5大核心套路+保命避坑法💥车主必看' likes=1 comments=0 score=4.5
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ec8849000000003700f4e7 title='⚠️聊点得罪同行的：车抵贷合同里这4个字' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ddd3e0000000002301f1e7 title='办理车抵一定要看清楚' likes=3 comments=1 score=14.2
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e596ad000000001a029686 title='车抵贷 5 大致命套路 + 避坑法！！！' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f1878d000000003502df48 title='车辆融资怎么样？流程麻烦么？' likes=1 comments=0 score=4.5
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e8abfc00000000220292ae title='车抵贷避雷｜急用钱必看' likes=9 comments=6 score=32.3
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d5fd6300000000230069b3 title='什么是车抵贷的？' likes=2 comments=0 score=7.1
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f08452000000001a02c37a title='车主优待消费凭证是不是通过了' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69439f2b000000001e02f4a9 title='' likes=65 comments=63 score=66.9
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=7666be12-6015-4de2-be6c-15409b57be16 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dc9cf6000000002301318b title='' likes=2 comments=4 score=19.4
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d8823c00000000210382c7 title='' likes=1 comments=7 score=20.3
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f17786000000003701f0f7 title='“押证不押车 车抵贷科普知识分享' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68c2718a000000001d020220 title='征信差，名下有车可以做贷款吗？' likes=2 comments=0 score=9.7
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e09d98000000002103a6ac title='支付宝“星选车抵”为啥没通过？' likes=0 comments=0 score=0.0
+2026-04-30 16:06:23 | DEBUG    | crawler.xhs_crawler:135 | 等待 3.2s ...
+2026-04-30 16:06:27 | INFO     | crawler.xhs_crawler:28 | [车抵贷] 抓取完成：共 66 条，新增 38 条
+2026-04-30 16:06:27 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 正在抓取第 1/3 页 ...
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'rec_query', 'xsec_token']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'rec_query', 'xsec_token']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6888cbb000000000050053ce title='车贷你听过吗？' likes=40 comments=0 score=37.0
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ef77d60000000035023e5d title='关于🚗抵，看懂这篇不踩坑💥' likes=5 comments=1 score=23.6
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69eaf4460000000022028c03 title='避雷！！帮客帮车抵贷乱收费、超高年化利率' likes=2 comments=5 score=20.7
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ad7890000000002602eb40 title='4个靠谱的车抵方法，建议收藏!' likes=6 comments=0 score=20.4
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693a9a02000000001e0325dd title='车主急用钱？来这里最快1小时到账！' likes=18 comments=4 score=40.6
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69ba0846000000001e00e92e title='征信差，名下有车可以办理抵押贷款吗？' likes=23 comments=74 score=58.3
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=0cc5e2a0-609d-42d9-98dc-9a5cb233f4da title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68d08a8000000000130101d8 title='相信大数据，车抵贷平台首选银行' likes=88 comments=1 score=49.4
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6943a010000000000d03ac1e title='' likes=35 comments=27 score=57.5
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=67fcfdeb000000000f032724 title='4个靠谱的车抵方法，建议收藏！' likes=52 comments=18 score=61.9
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693bda5d000000001f00de0c title='急用钱不求人！解决资金难题的干货分享🔥' likes=13 comments=4 score=37.9
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6831bb6d0000000022037f41 title='' likes=5 comments=2 score=19.9
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=696908ff000000000b009fa3 title='重庆车抵“水”多深？' likes=0 comments=0 score=2.6
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690427480000000004007d12 title='征信差，名下有车可以做抵押贷款吗？' likes=82 comments=118 score=70.3
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f1878d000000003502df48 title='车辆融资怎么样？流程麻烦么？' likes=1 comments=0 score=4.5
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e630420000000023017329 title='车抵贷5大核心套路+保命避坑法💥车主必看' likes=1 comments=0 score=4.5
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=0cc5e2a0-609d-42d9-98dc-9a5cb233f4da title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69612e62000000000c03761f title='汽车按揭' likes=10 comments=14 score=40.2
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69b97eea000000002200c2e4 title='车抵贷如何线上办理知名机构哪家专业' likes=3 comments=0 score=11.5
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693bdc49000000001e033300 title='征信不好，名下有车可以做车抵押贷款吗？' likes=7 comments=0 score=16.0
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69f208a50000000036032b5f title='重庆汽车抵压，15成怎么拿？' likes=0 comments=0 score=0.0
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69df401a000000001f000924 title='' likes=4 comments=7 score=30.4
+2026-04-30 16:06:27 | DEBUG    | crawler.xhs_crawler:135 | 等待 4.0s ...
+2026-04-30 16:06:31 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 正在抓取第 2/3 页 ...
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'rec_query', 'xsec_token']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['xsec_token', 'id', 'model_type', 'rec_query']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68317994000000002300333c title='' likes=0 comments=1 score=7.9
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690427480000000004007d12 title='征信差，名下有车可以做抵押贷款吗？' likes=82 comments=118 score=70.3
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=696efa18000000000e03c806 title='成都车抵终于成功过了！' likes=33 comments=24 score=56.9
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69df401a000000001f000924 title='' likes=4 comments=7 score=30.4
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69cf07ed0000000021007375 title='东莞汽车抵押，抵押流程，抵押贷款' likes=6 comments=1 score=21.9
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=693bdeb3000000001f00ffaa title='急用钱💰名下有全款车的朋友注意啦！' likes=44 comments=4 score=48.3
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=0c810f8a-6855-4152-9246-9cba0bbfee45 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e8b178000000002200c6a6 title='征信差 可以办车辆抵押吗' likes=2 comments=2 score=15.4
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68d08a8000000000130101d8 title='相信大数据，车抵贷平台首选银行' likes=88 comments=1 score=49.4
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68feedcf000000000700d1ee title='' likes=20 comments=0 score=29.5
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69649a0e000000002202f756 title='车抵终于是过了！' likes=50 comments=50 score=67.3
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6801b504000000001d00110e title='' likes=4 comments=4 score=22.6
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69bcb8ae0000000022000e95 title='关于车辆抵押的避坑小技巧！' likes=1 comments=2 score=15.5
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=67d01b59000000000603b3e6 title='千万别随便做车抵｜98年妹子被坑3万血泪' likes=8 comments=0 score=14.1
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dd99af00000000230262e3 title='征信差，名下有车可以办理抵押贷款吗？' likes=9 comments=12 score=40.5
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=694e652a000000001f00ece0 title='95后勇闯平安汽融客户经理的一天' likes=19 comments=2 score=35.0
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=0c810f8a-6855-4152-9246-9cba0bbfee45 title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69de0920000000001a02f44f title='押证不押车怎么选｜保姆级攻略来了' likes=1 comments=1 score=9.8
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68eb923c00000000030364ca title='为了抵丫汽车，在深圳找了三天三夜' likes=26 comments=40 score=57.4
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68b6bd04000000001d00f2e6 title='' likes=3 comments=0 score=11.5
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=67f89a75000000001e00540d title='公司自营车贷抵押销售' likes=1 comments=5 score=18.1
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e08326000000002301135e title='成都车主必看！车抵贷避坑全攻略✅再也不踩' likes=6 comments=7 score=31.0
+2026-04-30 16:06:32 | DEBUG    | crawler.xhs_crawler:135 | 等待 3.9s ...
+2026-04-30 16:06:36 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 正在抓取第 3/3 页 ...
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'user', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'user', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['xsec_token', 'id', 'model_type', 'rec_query']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'user', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', 'user', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['corner_tag_info', 'type', 'user', 'interact_info', 'cover', 'image_list', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:190 | no note_card found, item keys: ['id', 'model_type', 'rec_query', 'xsec_token']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['cover', 'image_list', 'corner_tag_info', 'type', 'user', 'interact_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'display_title', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['image_list', 'corner_tag_info', 'type', 'display_title', 'user', 'interact_info', 'cover', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', 'type', 'display_title', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:186 | note_card keys: ['type', 'user', 'interact_info', 'cover', 'image_list', 'corner_tag_info', '_outer_id']
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68317994000000002300333c title='' likes=0 comments=1 score=7.9
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d733ce000000002003bded title='' likes=17 comments=18 score=47.1
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69c1fee20000000023022b48 title='' likes=6 comments=53 score=47.8
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=68bfbc32000000001d02f4de title='' likes=62 comments=317 score=70.1
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=696908ff000000000b009fa3 title='重庆车抵“水”多深？' likes=0 comments=0 score=2.6
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690c7219000000000503b382 title='' likes=5 comments=5 score=30.4
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=46c2ff7b-c03a-4ad7-80d1-b00b0370bdae title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dee7e00000000023013263 title='' likes=26 comments=11 score=46.2
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69cb87d90000000021005f90 title='🧧车抵贷避坑速查！30秒看懂，不做冤大头' likes=3 comments=2 score=17.3
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e09e49000000002103ab06 title='汽车贷款周转,是押车还是押绿本？' likes=9 comments=5 score=35.2
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69cf8087000000001a024923 title='急需资金周转怎么办？' likes=2 comments=1 score=15.0
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69dc4d9f000000002102cfd0 title='' likes=8 comments=18 score=39.2
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69d49846000000001d01a6a2 title='🔥车本换钱攻略来了！' likes=1 comments=0 score=4.5
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=6942d240000000001e028221 title='急用💰别慌！汽车典当攻略，安心周转不踩坑' likes=0 comments=0 score=2.6
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=690954f60000000007031633 title='车辆抵押正规化' likes=1 comments=1 score=9.8
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e070cf000000002301e2df title='' likes=13 comments=58 score=49.6
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=46c2ff7b-c03a-4ad7-80d1-b00b0370bdae title='' likes=0 comments=0 score=0.0
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e6dbd8000000001b002890 title='' likes=5 comments=12 score=31.1
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69cf07ed0000000021007375 title='东莞汽车抵押，抵押流程，抵押贷款' likes=6 comments=1 score=21.9
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e1b37b000000002301789b title='车抵贷 5 大核心套路 + 保命避坑法！' likes=15 comments=14 score=45.8
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e4e32e0000000023015430 title='在成都，办理车抵 贷，需要哪些资料' likes=2 comments=1 score=16.5
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:249 |   note_id=69e98509000000001a0353f3 title='' likes=3 comments=6 score=29.0
+2026-04-30 16:06:37 | DEBUG    | crawler.xhs_crawler:135 | 等待 4.2s ...
+2026-04-30 16:06:41 | INFO     | crawler.xhs_crawler:28 | [车抵贷公司] 抓取完成：共 66 条，新增 24 条
+2026-04-30 16:06:44 | INFO     | replier.auto_replier:157 | 本批待回复帖子数：3
+2026-04-30 16:06:44 | INFO     | replier.auto_replier:157 | [1/3] 处理帖子「68bfbc32000000001d02f4de」  score=70.1
+2026-04-30 16:06:44 | INFO     | replier.auto_replier:256 |   [评论] 使用模板「车抵贷」: 博主好专业啊！…
+2026-04-30 16:06:44 | DEBUG    | replier.auto_replier:459 |   等待 5.3s ...
+2026-04-30 16:06:50 | INFO     | replier.auto_replier:256 |   [评论] 发送成功 ✓
+2026-04-30 16:06:50 | DEBUG    | replier.auto_replier:459 |   等待 59.2s ...
+2026-04-30 16:07:49 | INFO     | replier.auto_replier:157 | [2/3] 处理帖子「车抵终于是过了！」  score=67.3
+2026-04-30 16:07:49 | INFO     | replier.auto_replier:256 |   [评论] 使用模板「特」: 特别好用！！！…
+2026-04-30 16:07:49 | INFO     | replier.auto_replier:256 |   [评论] 配图 1 张（Web 端是否支持带图评论以接口为准）
+2026-04-30 16:07:49 | DEBUG    | replier.auto_replier:459 |   等待 7.3s ...
+2026-04-30 16:07:58 | DEBUG    | replier.comment_image:59 | 评论配图已上传 file_id 前缀: spectrum/QnSbGT6…
+2026-04-30 16:07:58 | INFO     | replier.auto_replier:256 |   [评论] 发送成功 ✓
+2026-04-30 16:07:58 | DEBUG    | replier.auto_replier:459 |   等待 48.6s ...
+2026-04-30 16:08:46 | INFO     | replier.auto_replier:157 | [3/3] 处理帖子「69439f2b000000001e02f4a9」  score=66.9
+2026-04-30 16:08:46 | INFO     | replier.auto_replier:256 |   [评论] 使用模板「车抵贷」: 博主好专业啊！…
+2026-04-30 16:08:46 | DEBUG    | replier.auto_replier:459 |   等待 13.4s ...
+2026-04-30 16:09:00 | INFO     | replier.auto_replier:256 |   [评论] 发送成功 ✓
+2026-04-30 16:09:00 | INFO     | replier.auto_replier:157 | 批次完成：共 3 条 | 评论成功 3 | 私信成功 0 | 失败 0
+2026-04-30 16:12:40 | INFO     | scheduler.task_scheduler:62 | 调度器已停止
+2026-04-30 16:12:40 | INFO     | web.app:50 | 应用退出，定时调度器已停止
